@@ -1,0 +1,7 @@
+@mixin helper-backdrop-filter($from, $to) {
+	@for $i from $from through $to {
+		.backdrop-filter-#{$i}px {
+			backdrop-filter: blur(#{$i}px) !important;
+		}
+	}
+}

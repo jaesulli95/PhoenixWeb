@@ -1,0 +1,116 @@
+.bootstrap-table {
+	& .dropdown-toggle {
+		& .caret {
+			display: none;
+		}
+	}
+	& .fixed-table-container {
+		&.fixed-height {
+			padding-bottom: 0 !important;
+			
+			& .fixed-table-header {
+				& .table {
+					border-bottom: none;
+					
+					& thead {
+						& tr {
+							& th {
+								border-color: var(--#{$prefix}table-border-color) !important;
+								padding: $table-cell-padding-y $table-cell-padding-x !important;
+								
+								& .th-inner {
+									padding: 0 !important;
+									display: flex;
+									align-items: center;
+									
+									&:after {
+										right: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			& .fixed-table-body {
+				& .table {
+					& thead {
+						& tr {
+							& th {
+								border-top: none;
+								border-bottom: none;
+							}
+						}	
+					}
+				}
+			}
+			& .fixed-table-border {
+				border-color: var(--#{$prefix}border-color) !important;
+				margin-top: rem(25px);
+			}
+			&:not(.has-footer) {
+				border-color: var(--#{$prefix}border-color) !important;
+			}
+		}
+		& .table {
+			& thead {
+				& tr {
+					border-bottom-width: 0 !important;
+					
+					& th {
+						border-bottom-color: initial !important;
+						
+						& .sortable {
+							position: relative;
+							background-image: none !important;
+						
+							&:after {
+								content: '';
+								position: absolute;
+								
+								@include bootstrap-icons();
+								@if $enable-rtl {
+									left: rem(10px);
+								} @else {
+									right: rem(10px);
+								}
+							}
+							&.both {
+								&:after {
+									content: '\F229';
+									color: rgba(var(--#{$prefix}body-color-rgb), .25);
+								}
+							}
+							&.asc {
+								&:after {
+									content: '\F229';
+									color: var(--#{$prefix}theme);
+								}
+							}
+							&.desc {
+								&:after {
+									content: '\F235';
+									color: var(--#{$prefix}theme);
+								}
+							}
+						}
+					}
+				}
+			}
+			& tbody {
+				& tr {
+					&:first-child {
+						border-top: none;
+						
+						& td {
+							border-top: none;
+						}	
+					}
+				}
+			}
+		}
+	}
+	&.fullscreen {
+		background: var(--#{$prefix}app-header-bg) !important;
+	}
+}

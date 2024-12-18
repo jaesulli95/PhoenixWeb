@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Quantum.Models.Project>
+@{
+	ViewData["Title"] = "Books";
+}
+
+@section Scripts {
+	<script src="~/phoenix/phoenix-books.js"></script>
+}
+
+@{
+	Dictionary<int, string> Statuses = new Dictionary<int, string>();
+	Statuses.Add(0, "To Be Read");
+	Statuses.Add(1, "In-Progress");
+	Statuses.Add(2, "Completed");
+	Statuses.Add(3, "Did Not Finish");
+}
+
+<div class="d-flex align-items-center mb-3">
+	<div>
+		<h1 class="page-header mb-0">Books</h1>
+	</div>
+
+	<div class="ms-auto">
+		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
+		   data-bs-toggle="modal" data-bs-target="#BookModal">
+			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
+			ADD BOOK
+		</a>
+	</div>
+</div>
+<!-- Modal to Create New Projects BEGIN -->
+<div class="modal fade" id="BookModal">
+	<div class="modal-dialog modal-lg">
+		<!--modal-lg-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add Book</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form asp-controller="Books" asp-action="Create" method="post">
+					<div class="form-group mb-3">
+						<label class="form-label">Name</label>
+						<input type="text" class="form-control" name="Name" id="Name" />
+						<br />
+						<label class="form-label">Author:</label>
+						<input type="text" class="form-control" name="Author" id="Author" />
+						<br />
+						<div class="mb-3">
+							<label class="form-label">Status</label>
+							<select class="form-select" name="Status">
+								<option value="0">To Be Read</option>
+								<option value="1">In-Progress</option>
+								<option value="2">Completed</option>
+								<option value="3">Did Not Finish</option>
+							</select>
+						</div>
+						<hr />
+						<button type="submit" class="btn btn-outline-theme">Create</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal to Create New Projects END-->
+<div class="card">
+	<div class="tab-content">
+		<div class="input-group mb-4">
+			<div class="flex-fill position-relative z-1">
+				<div class="input-group">
+					<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0">
+						<i class="fa fa-search opacity-5"></i>
+					</div>
+					<input id="BookSearch" type="text" class="form-control ps-30px" placeholder="Search Books">
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade show active" id="allTab">
+			<!--Filtiered by All Tab-->
+			<!-- BEGIN table -->
+			<div class="table-responsive">
+				<table id="T_Book" class="table table-sm table-hover text-nowrap small mb-4">
+					<!--text-nowrap-->
+					<thead class="table-dark">
+						<tr>
+							<th>Name</th>
+							<th>Author</th>
+							<th>Status</th>
+							<th>Date Added</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+					@foreach (var b in (List<Book>)ViewBag.Books)
+						{
+							<tr class="bookrow" data-target-bookid=@b.id onclick="PopulateEditModal(this)">
+								<td class="align-middle" data-bookname=@b.Name>
+									<a asp-controller="Books" asp-action="Edit" asp-route-BookId=@b.id class="text-body text-opacity-75 text-decoration-none">
+										@b.Name
+									</a>
+								</td>
+								<td class="align-middle" data-author=@b.Author>@b.Author</td>
+								<td class="align-middle" data-status=@b.Status>@Statuses[b.Status]</td>
+								<td class="align-middle" data-modified=@b.DateModified>@b.DateModified</td>
+								<td>
+									@if(b.Status == 0){
+										<abbr title="In-Progress"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="1"><i class="far fa-lg fa-fw me-2 fa-hourglass"></i></a></abbr>
+										<abbr title="Complete"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="2"><i class="fas fa-lg fa-fw me-2 fa-book"></i></a></abbr>
+										<abbr title="DNF"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="3"><i class="fas fa-lg fa-fw me-2 fa-ban"></i></a></abbr>
+									}
+
+									@if(b.Status == 1) {
+										<abbr title="Complete"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="2"><i class="fas fa-lg fa-fw me-2 fa-book"></i></a></abbr>
+										<abbr title="DNF"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="3"><i class="fas fa-lg fa-fw me-2 fa-ban"></i></a></abbr>
+									}
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+.btn-scroll-top {
+	position: fixed;
+	bottom: $spacer * 3;
+	width: rem(30px);
+	height: rem(30px);
+	background: rgba($white, .15);
+	backdrop-filter: blur(6px);
+	color: $white;
+	text-align: center;
+	text-decoration: none;
+	z-index: $app-header-zindex;
+	border-radius: $component-border-radius * 10;
+	transition: $transition-base;
+	font-size: rem(24px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	@if $enable-rtl {
+		left: $spacer * 2;
+	} @else {
+		right: $spacer * 2;
+	}
+	@include media-breakpoint-down(md) {
+		bottom: $spacer * 2;
+		z-index: $app-header-zindex;
+		
+		@if $enable-rtl {
+			left: $spacer;
+		} @else {
+			right: $spacer;
+		}
+	}
+	
+	&:hover {
+		background: var(--#{$prefix}theme);
+		color: var(--#{$prefix}theme-color);
+		text-decoration: none;
+	}
+}

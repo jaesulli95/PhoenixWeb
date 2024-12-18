@@ -1,0 +1,186 @@
+﻿@model IEnumerable<Quantum.Models.Project>
+@{
+	ViewData["Title"] = "Projects";
+}
+
+@section Scripts {
+	<script src="~/phoenix/phoenix-web.js"></script>
+}
+
+<div class="d-flex align-items-center mb-3">
+	<div>
+		<h1 class="page-header mb-0">Phoenix Projects</h1>
+	</div>
+
+	<div class="ms-auto">
+		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
+		data-bs-toggle="modal" data-bs-target="#ProjectModal">
+			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
+			ADD PROJECT
+		</a>
+	</div>
+</div>
+<!-- Modal to Create New Projects BEGIN -->
+<div class="modal fade" id="ProjectModal">
+	<div class="modal-dialog modal-lg"> <!--modal-lg-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add Project</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form asp-controller="Projects" asp-action="Create" method="post">
+					<div class="form-group mb-3">
+						<label class="form-label">Name</label>
+						<input type="text" class="form-control" name="Name" id="ProjectName"/>
+						<br />
+						<label class="form-label">Git Link:</label>
+						<input type="text" class="form-control" name="VCLink" id="GitLink" />
+						<br/>
+						<div class="mb-3">
+							<label class="form-label">Description <span class="text-danger">*</span></label>
+							<div class="form-control p-0">
+								<textarea name="Description" class="summernote form-control" rows="12"></textarea>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Category</label>
+							<select class="form-select" name="Category">
+								@{int i = 0;}
+								@foreach(var c in (string[])ViewBag.Categories) {
+									<option value="@i">@c</option>
+									i++;
+								}
+							</select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Status</label>
+							<select class="form-select" name="Status">
+								<option value="0">Not Yet Started</option>
+								<option value="1">In Progress</option>
+								<option value="2">Completed/Milestone</option>
+							</select>
+						</div>
+						<hr/>
+						<button type="submit" class="btn btn-outline-theme">Create</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal to Create New Projects END-->
+<!-- Modal to Edit Projects BEGIN-->
+<div class="modal fade" id="EditProjectModal">
+	<div class="modal-dialog modal-lg">
+		<!--modal-lg-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Edit Project</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form asp-controller="Projects" asp-action="Edit" method="post">
+					<div class="form-group mb-3">
+						<label class="form-label">Name</label>
+						<input type="text" class="form-control" name="Name" id="ProjectName" />
+						<br />
+						<label class="form-label">Git Link:</label>
+						<input type="text" class="form-control" name="VCLink" id="GitLink" />
+						<br />
+						<div class="mb-3">
+							<label class="form-label">Description <span class="text-danger">*</span></label>
+							<div class="form-control p-0">
+								<textarea name="Description" class="summernote form-control" rows="12"></textarea>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Category</label>
+							<select class="form-select" name="Category">
+								@{
+									int j = 0;
+								}
+								@foreach (var c in (string[])ViewBag.Categories)
+								{
+									<option value="@j">@c</option>
+									j++;
+								}
+							</select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Status</label>
+							<select class="form-select" name="Status">
+								<option value="0">Not Yet Started</option>
+								<option value="1">In Progress</option>
+								<option value="2">Completed/Milestone</option>
+							</select>
+						</div>
+						<hr />
+						<button type="submit" class="btn btn-outline-theme">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal to Edit Projects END -->
+
+<div class="card">
+	<div class="tab-content">
+		<div class="input-group mb-4">
+			<div class="flex-fill position-relative z-1">
+				<div class="input-group">
+					<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0">
+						<i class="fa fa-search opacity-5"></i>
+					</div>
+					<input id="ProjectSearch" type="text" class="form-control ps-30px" placeholder="Search Projects">
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade show active" id="allTab"> <!--Filtiered by All Tab-->
+			<!-- BEGIN table -->
+			<div class="table-responsive">
+				<table id="T_Project" class="table table-sm table-hover text-nowrap small mb-4"> <!--text-nowrap-->
+					<thead class="table-dark">
+						<tr>
+							<th>NAME</th>
+							<th>DESCRIPTION</th>
+							<th>DATE CREATED</th>
+							<th></th>
+							<!--Make sure the number of Table Columns match up with the Data Points for each item-->
+						</tr>
+					</thead>
+					<tbody>
+						@foreach(var p in (List<Project>)ViewBag.Projects)
+						{
+							<tr class="projectrow">
+								<td>
+									<div class="d-flex align-items-center">
+										<div class="ms-3">
+											<a asp-controller="Projects" asp-action="Edit" asp-route-ProjectId=@p.Id
+											   class="text-body text-opacity-75 text-decoration-none">@p.Name</a>
+										</div>
+									</div>
+								</td>
+								@{string Desc = "";}
+								@if(@p.Description?.Length > 60) {
+									Desc = p.Description.Substring(0, 60) + "...";
+								}else {
+									Desc = p.Description;
+								}
+								<td class="align-middle">@Desc</td>
+								<td class="align-middle">@p.CreationTimestamp</td>
+								<td class="align-middle">
+									<div class="col-md-6 col-sm-6 col-xs-6 mb-1 text-truncate">
+										<a asp-controller="Projects" asp-action="Edit" asp-route-ProjectId=@p.Id><i class="far fa-lg fa-fw me-2 fa-edit"></i></a>
+									</div>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

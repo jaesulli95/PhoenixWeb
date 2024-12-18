@@ -1,0 +1,43 @@
+﻿<!-- BEGIN #header -->
+<div id="header" class="app-header">
+	<!-- BEGIN desktop-toggler -->
+	<div class="desktop-toggler">
+		<button type="button" class="menu-toggler" data-toggle-class="app-sidebar-collapsed" data-dismiss-class="app-sidebar-toggled" data-toggle-target=".app">
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</button>
+	</div>
+	<!-- END desktop-toggler -->
+	
+	<!-- BEGIN mobile-toggler -->
+	<div class="mobile-toggler">
+		@if (ViewData["AppTopNav"] != null && ViewData["AppSidebarNone"] != null) {
+			<button type="button" class="menu-toggler" data-toggle="app-top-nav-mobile">
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+		}
+		@if (!(ViewData["AppTopNav"] != null && ViewData["AppSidebarNone"] != null)) {
+			<button type="button" class="menu-toggler" data-toggle-class="app-sidebar-mobile-toggled" data-toggle-target=".app">
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+		}
+	</div>
+	<!-- END mobile-toggler -->
+	
+	<!-- BEGIN brand -->
+	<div class="brand">
+		<a href="/" class="brand-logo w-100">
+			<iconify-icon icon="lets-icons:time-progress-duotone" class="fs-24px me-2 text-theme"></iconify-icon>
+			<span class="brand-text fw-500 fs-14px">PhoenixWeb</span>
+		</a>
+	</div>
+	<!-- END brand -->
+	
+	<!-- BEGIN menu -->
+	<div class="menu">
+	</div>
+	<!-- END menu -->
+</div>
+<!-- END #header -->

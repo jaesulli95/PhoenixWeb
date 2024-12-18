@@ -1,0 +1,139 @@
+.jvectormap-container {
+	position: relative;
+	
+	& .jvectormap-zoomin, 
+	& .jvectormap-zoomout, 
+	& .jvectormap-goback {
+		width: rem(16px);
+		height: rem(16px);
+		padding: 0;
+		box-sizing: border-box;
+		font-size: $font-size-base;
+		left: $card-spacer-x;
+		border: none;
+		box-shadow: none;
+		border-radius: $component-border-radius;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+		background: rgba($white, .15);
+		color: $white;
+		text-indent: 999px;
+		overflow: hidden;
+		
+		@if $enable-rtl {
+			right: $card-spacer-x;
+			left: auto;
+		} @else {
+			left: $card-spacer-x;
+		}
+		
+		.jvectormap-without-padding & {
+			@if $enable-rtl {
+				right: 0;
+				left: auto;
+			} @else {
+				left: 0;
+			}
+		}
+		
+		&:hover {
+			color: $black;
+			background: $white;
+		}
+	}
+	& .jvectormap-zoomin {
+		top: $card-spacer-x;
+		
+		@include bootstrap-icons();
+		
+		&:before {
+			content: '\F64D';
+			text-indent: 0;
+			position: absolute;
+			left: 0;
+			width: rem(16px);
+			height: rem(16px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.jvectormap-without-padding & {
+			top: 0;
+		}
+	}
+	& .jvectormap-zoomout {
+		top: $card-spacer-x + rem(18px);
+		
+		@include bootstrap-icons();
+		
+		&:before {
+			content: '\F63B';
+			text-indent: 0;
+			position: absolute;
+			left: 0;
+			width: rem(16px);
+			height: rem(16px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.jvectormap-without-padding & {
+			top: rem(25px);
+		}
+	}
+	& .jvectormap-legend {
+		background: $dropdown-bg;
+		color: $dropdown-color;
+		box-shadow: $dropdown-box-shadow;
+		border-radius: $dropdown-border-radius;
+		backdrop-filter: $dropdown-backdrop-filter;
+	}
+	& .jvectormap-legend-title {
+		font-size: $font-size-base - rem(3px);
+		padding: $spacer * .3 $spacer * .5;
+		background: rgba($white, .15);
+		color: $white
+	}
+	& .jvectormap-legend-cnt-v {
+		& .jvectormap-legend {
+			padding: 0;
+			margin: $card-spacer-x $card-spacer-x 0 0;
+			
+			& .jvectormap-legend-inner {
+				padding: $spacer * .5;
+			}
+			& .jvectormap-legend-tick {
+				display: flex;
+				align-items: center;
+			}
+			& .jvectormap-legend-tick-sample {
+				width: rem(12px);
+				height: rem(12px);
+			}
+			& .jvectormap-legend-tick-text {
+				padding-left: $spacer * .5;
+				font-size: $font-size-sm;
+				display: block;
+				line-height: $line-height-base;
+			}
+		}
+	}
+}
+.jvectormap-tip {
+	color: var(--#{$prefix}body-bg) !important;
+	font-weight: $font-weight-semibold !important;
+	padding: $spacer * .5 $spacer !important;
+	border: none !important;
+	font-family: inherit !important;
+	font-size: $font-size-sm !important;
+	z-index: $zindex-dropdown;
+	
+	background: $dropdown-bg !important;
+	box-shadow: $dropdown-box-shadow;
+	border-radius: $dropdown-border-radius;
+	backdrop-filter: $dropdown-backdrop-filter;
+}

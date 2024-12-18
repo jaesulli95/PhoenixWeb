@@ -1,0 +1,111 @@
+.sp-original-input-container {
+	& .sp-add-on {
+		min-width: rem(35px);
+		background-image: none;
+		
+		@if $enable-rtl {
+			body & {
+				border-radius: 0 !important;
+				border-top-right-radius: $dropdown-border-radius !important;
+				border-bottom-right-radius: $dropdown-border-radius !important;
+			}
+		}
+		
+		& .sp-colorize {
+			position: relative;
+			overflow: hidden;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border: 5px solid transparent;
+			}
+		}
+	}
+	
+	@if $enable-rtl {
+		body & {
+			& .spectrum.with-add-on {
+				border-radius: 0 !important;
+				border-left: 1px solid $input-border-color;
+				border-top-left-radius: $dropdown-border-radius !important;
+				border-bottom-left-radius: $dropdown-border-radius !important;
+				
+				&:focus {
+					border-color: $input-focus-border-color;
+				}
+			}
+		}
+	}
+}
+.sp-container {
+	body & {
+		background: $dropdown-bg;
+		border: $dropdown-border-width solid $dropdown-border-color;
+		border-radius: $dropdown-border-radius;
+		box-shadow: $dropdown-box-shadow;
+		backdrop-filter: $dropdown-backdrop-filter;
+		
+		& .sp-palette-container {
+			padding: $spacer * .5;
+			border-color: $dropdown-border-color;
+			
+			& .sp-palette {
+				& .sp-thumb-el,
+				& .sp-thumb-inner {
+					border-radius: $dropdown-border-radius;
+				}
+				& .sp-thumb-el {
+					margin: $spacer * .25;
+				}
+			}
+		}
+		& .sp-clear, 
+		& .sp-color, 
+		& .sp-hue, 
+		& .sp-sat, 
+		& .sp-val {
+			border-radius: $dropdown-border-radius;
+		}
+		& .sp-picker-container {
+			& .sp-input-container {
+				& .sp-input {
+					color: $input-color !important;
+					border-color: $input-border-color !important;
+					border-radius: $input-border-radius !important;
+					transition: $transition-base;
+					font-size: $input-font-size;
+					
+					&:focus {
+						border-color: $input-focus-border-color !important;
+						box-shadow: $input-focus-box-shadow !important;
+						outline: none;
+					}
+				}
+			}
+			& button {
+				background: var(--#{$prefix}btn-bg);
+				border: var(--#{$prefix}border-width) solid var(--#{$prefix}btn-border-color);
+				color: var(--#{$prefix}btn-color);
+				border-radius: $btn-border-radius;
+				
+				&:hover,
+				&:focus {
+					background: var(--#{$prefix}btn-hover-bg);
+					color: var(--#{$prefix}btn-hover-color);
+					border-color: var(--#{$prefix}btn-hover-border-color);
+				}
+			}
+			& .sp-cancel {
+				@include button-variant($default, $default);
+			}
+			& .sp-choose {
+				@include button-variant($theme, $theme);
+			}
+		}
+	}
+}

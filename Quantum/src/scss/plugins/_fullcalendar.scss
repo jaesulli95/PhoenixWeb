@@ -1,0 +1,123 @@
+.fc-event-list {
+	& .fc-event-item {
+		& .fc-event-link {
+			padding: $spacer * .375 $spacer * .75;
+			color: var(--#{$prefix}body-color);
+			position: relative;
+			border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+			display: flex;
+			align-items: center;
+			border-radius: $component-border-radius;
+			font-size: $font-size-sm;
+			
+			&:hover {
+				background: rgba(var(--#{$prefix}body-color-rgb), .1);
+			}
+			&:after {
+				content: '\f58e';
+				color: rgba(var(--#{$prefix}body-color-rgb), .25);
+				line-height: 1;
+				margin-left: auto;
+				
+				@include fontawesome();
+			}
+		}
+		& + .fc-event-item {
+			margin-top: $spacer * .5;
+		}
+	}
+}
+.fc-event-link {
+	&.fc-dragging,
+	&.fc-event-dragging {
+		padding: $spacer * .35 $spacer * .7;
+		background: rgba(var(--#{$prefix}body-color-rgb), .15);
+		border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+		color: var(--#{$prefix}body-color);
+		font-size: $font-size-sm;
+		display: flex;
+		align-items: center;
+		border-radius: $component-border-radius;
+		box-shadow: $dropdown-box-shadow;
+	}
+}
+.fc {
+	--fc-event-bg-color: rgba(var(--#{$prefix}white-rgb), .1);
+	--fc-event-border-color: rgba(var(--#{$prefix}white-rgb), .1);
+	--fc-daygrid-event-dot-width: 4px;
+	--fc-small-font-size: #{$font-size-sm};
+	
+	& .fc-h-event {
+		border-radius: $component-border-radius;
+		padding: $spacer * .2 $spacer * .5;
+		border-width: var(--#{$prefix}border-width);
+		
+		& .fc-event-time {
+			font-weight: $font-weight-semibold;
+		}
+		& .fc-event-title {
+			padding: 0;
+		}
+		& .fc-event-title-container {
+			display: flex;
+			align-items: center;
+		}
+	}
+	& .fc-header-toolbar {
+		&.fc-toolbar {
+			& .fc-toolbar-chunk {
+				& + .fc-toolbar-chunk {
+					@include media-breakpoint-down(lg) {
+						margin-top: $spacer * .5;
+					}
+				}
+			}
+		}
+	}
+	& .fc-toolbar {
+		margin-bottom: $spacer !important;
+		flex-wrap: wrap;
+		align-items: center;
+		
+		& .fc-toolbar-chunk {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		& .fc-toolbar-title {
+			font-size: $h4-font-size;
+		}
+	}
+	& td,
+	& th {
+		border-width: $table-border-width;
+		border-color: $table-border-color;
+	}
+	& .fc-scroller-liquid-absolute {
+		position: relative !important;
+		overflow: initial !important;
+	}
+	& a:not([href]) {
+		color: inherit;
+		text-decoration: none;
+	}
+	& .btn {
+		--#{$prefix}btn-disabled-color: #{rgba($white, .5)} !important;
+		
+		padding: $btn-padding-y-sm $btn-padding-x-sm;
+		font-size: $btn-font-size-sm;
+		text-transform: uppercase;
+		
+		@include button-variant($secondary, transparent, $white, rgba($white, .3), transparent, $white);
+		
+		&.fc-dayGridMonth-button,
+		&.fc-timeGridWeek-button,
+		&.fc-timeGridDay-button {
+			min-width: rem(60px);
+		}
+	}
+	& .table-bordered {
+		border-left: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+		border-top: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+	}
+}

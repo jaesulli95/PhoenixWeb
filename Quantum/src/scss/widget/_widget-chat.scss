@@ -1,0 +1,95 @@
+.widget-chat {
+	margin: 0;
+	padding: 0;
+	
+	& .widget-chat-item {
+		display: flex;
+		align-items: flex-end;
+		
+		& + .widget-chat-item {
+			margin-top: $spacer;
+		}
+		& > div + div {
+			padding-left: $spacer * .75;
+		}
+	}
+	& .widget-chat-date {
+		font-size: $font-size-base - rem(2px);
+		font-weight: $font-weight-bold;
+		color: rgba(var(--#{$prefix}body-color-rgb), .5);
+		padding: $spacer * .75;
+		text-align: center;
+	}
+	& .widget-chat-content {
+		flex: 1;
+	}
+	& .widget-chat-name,
+	& .widget-chat-status {
+		font-size: $font-size-sm;
+		font-weight: $font-weight-semibold;
+		color: rgba(var(--#{$prefix}body-color-rgb), .75);
+		margin: $spacer * .25 0;
+		line-height: 1.5;
+	}
+	& .widget-chat-media {
+		width: rem(28px);
+		
+		& img {
+			max-width: 100%;
+			display: block;
+		}
+	}
+	& .widget-chat-message {
+		background: rgba($white, .15);
+		color: $white;
+		padding: $spacer * .5 $spacer;
+		display: inline-block;
+		position: relative;
+		border-radius: $component-border-radius * 1.25;
+		
+		& + .widget-chat-message {
+			margin-top: $spacer * .3;
+		}
+		&.last {
+			&:before {
+				content: '';
+				border: rem(2px) solid transparent;
+				border-bottom-color: rgba($white, .15);
+				position: absolute;
+				bottom: rem(6px);
+				
+				@if $enable-rtl {
+					right: rem(-4px);
+					border-left-color: rgba($white, .15);
+				} @else {
+					left: rem(-4px);
+					border-right-color: rgba($white, .15);
+				}
+			}
+		}
+	}
+	& .reply {
+		& .widget-chat-content {
+			text-align: right;
+		}
+		& .widget-chat-message {
+			background: var(--#{$prefix}theme);
+			color: var(--#{$prefix}theme-color);
+			
+			&.last:before {
+				border-color: transparent;
+				border-bottom-color: var(--#{$prefix}theme);
+				
+				@if $enable-rtl {
+					border-right-color: var(--#{$prefix}theme);
+					right: auto;
+					left: rem(-4px);
+				} @else {
+					border-left-color: var(--#{$prefix}theme);
+					left: auto;
+					right: rem(-4px);
+				}
+			}
+		}
+	}
+}

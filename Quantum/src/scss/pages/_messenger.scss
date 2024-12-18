@@ -1,0 +1,220 @@
+.messenger {
+	height: 100%;
+	display: flex;
+	padding: $spacer;
+	
+	& .messenger-sidebar {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		margin: $spacer;
+		
+		@include media-breakpoint-up(lg) {
+			max-width: rem(250px);
+		}
+		& .messenger-sidebar-header {
+			& + .messenger-sidebar-body {
+				padding-top: $spacer;
+			}
+		}
+		& .messenger-sidebar-body {
+			flex: 1;
+			overflow: hidden;
+		}
+		& .messenger-item {
+			& .messenger-link {
+				display: flex;
+				padding: $spacer;
+				text-decoration: none;
+				color: var(--#{$prefix}body-color);
+				
+				&:hover,
+				&:focus {
+					background-color: rgba(var(--#{$prefix}body-color-rgb), .075);
+				}
+				&.active {
+					background-color: rgba(var(--#{$prefix}body-color-rgb), .15);
+				}
+				
+				& .messenger-media {
+					& .messenger-media-icon {
+						width: rem(30px);
+						height: rem(30px);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						
+						& img {
+							max-width: 100%;
+							max-height: 100%;
+						}
+					}
+					
+					& + .messenger-info {
+						@if $enable-rtl {
+							padding-right: $spacer;
+						} @else {
+							padding-left: $spacer;
+						}
+					}
+				}
+				& .messenger-info {
+					flex: 1;
+					white-space: nowrap;
+				}
+				& .messenger-time-badge {
+					display: flex;
+					flex-direction: column;
+					white-space: nowrap;
+				}
+				& .messenger-time {
+					font-size: $font-size-sm * .85;
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					margin-bottom: $spacer * .25;
+				}
+				& .messenger-text,
+				& .messenger-name {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: rem(140px);
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					font-size: $font-size-sm;
+				}
+				& .messenger-name {
+					font-weight: $font-weight-semibold;
+					color: var(--#{$prefix}heading-color);
+				}
+				& .messenger-badge {
+					display: inline-flex;
+					padding: 0 rem(3px);
+					min-width: rem(14px);
+					min-height: rem(14px);
+					align-items: center;
+					justify-content: center;
+					font-size: $font-size-base * .65;
+					font-weight: $font-weight-semibold;
+					background: rgba(var(--#{$prefix}body-color-rgb), .15);
+					color: var(--#{$prefix}body-color);
+					
+					&.empty {
+						display: none;
+					}
+					
+					@if ($enable-rtl) {
+						margin-right: auto;
+					} @else {
+						margin-left: auto;
+					}
+				}
+			}
+		}
+		
+		& + .messenger-content {
+			@include media-breakpoint-up(lg) {
+				@if $enable-rtl {
+					margin-right: 0;
+				} @else {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	& .messenger-content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		margin: $spacer;
+		
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+		
+		& .messenger-content-header {
+			display: flex;
+			//padding: $spacer;
+			align-items: center;
+			
+			& .messenger-content-header-mobile-toggler {
+				display: none;
+				
+				@include media-breakpoint-down(lg) {
+					display: block;
+				}
+				
+				& a {
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					font-size: rem(18px);
+				}
+			}
+			& .messenger-content-header-media {
+				& .media {
+					width: rem(30px);
+					height: rem(30px);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				& + .messenger-content-header-info {
+					@if ($enable-rtl) {
+						margin-right: $spacer;
+					} @else {
+						margin-left: $spacer;
+					}
+				}
+			}
+			& .messenger-content-header-info {
+				font-size: $font-size-base;
+				color: var(--#{$prefix}heading-color);
+				font-weight: $font-weight-semibold;
+				line-height: $line-height-sm;
+				flex: 1;
+				
+				& small {
+					display: block;
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					font-weight: normal;
+					font-size: $font-size-sm;
+					line-height: $line-height-sm;
+					margin-top: $spacer * .15;
+				}
+			}
+			& .messenger-content-header-btn {
+				display: flex;
+				
+				& .btn {
+					font-size: rem(16px);
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					padding: 0 $spacer;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+					&:hover,
+					&:focus {
+						color: var(--#{$prefix}body-color);
+					}
+				}
+			}
+		}
+		& .messenger-content-body {
+			flex: 1;
+			overflow: hidden;
+			background: rgba($white, .15);
+			margin: $spacer 0;
+			
+			& .widget-chat {
+				padding: $spacer;
+			}
+		}
+	}
+	&.messenger-content-toggled {
+		@include media-breakpoint-down(lg) {
+			& .messenger-sidebar {
+				display: none;
+			}
+			& .messenger-content {
+				display: flex;
+			}
+		}
+	}
+}

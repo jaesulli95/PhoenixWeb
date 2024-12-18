@@ -1,0 +1,155 @@
+﻿@model ProjectEditData;
+@{
+	ViewData["Title"] = "Modify Project";
+
+	ProjectEditData? data = (ProjectEditData?)ViewData["ProjectEditData"];
+	int? TaskLength = data?.projectTasks?.Count;
+}
+
+@section Styles {
+	<link href="~/lib/summernote/dist/summernote-lite.css" rel="stylesheet">
+	<link href="~/lib/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
+	<link href="~/lib/tag-it/css/jquery.tagit.css" rel="stylesheet">
+}
+@section Scripts {
+	<script src="~/lib/summernote/dist/summernote-lite.min.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="~/lib/blueimp-tmpl/js/tmpl.min.js"></script>
+	<script src="~/lib/blueimp-load-image/js/load-image.all.min.js"></script>
+	<script src="~/lib/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"></script>
+	<script src="~/lib/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+	<script src="~/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+	<script src="~/lib/jquery-migrate/dist/jquery-migrate.min.js"></script>
+	<script src="~/lib/tag-it/js/tag-it.min.js"></script>
+	@* <script src="~/js/demo/page-product-details.demo.js"></script> *@
+	<script src="~/phoenix/phoenix-web.js"></script>
+}
+
+<!--CREATE PROJECT TASK MODAL-->
+<div class="modal fade" id="AddTaskModal">
+	<div class="modal-dialog">
+		<form asp-controller="Projects" asp-action="CreateProjectTask">
+			<input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@Html.DisplayFor(project => project.project.Id) />
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Add Task</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="mb-3">
+						<label class="form-label">Name</label>
+						<input type="text" class="form-control" placeholder="e.g Feature enhancement" name="Name">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Status</label>
+						<select class="form-select" name="Type">
+							<option value="0">Feature</option>
+							<option value="1">Enhancement</option>
+							<option value="2">Bug</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<textarea class="form-control" rows="10" name="Description"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-theme w-100px">CREATE</button>
+					<a href="#" class="btn btn-outline-default w-100px" data-bs-dismiss="modal">CANCEL</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="row gx-4">
+	<div class="col-xl-8">
+		<div class="card mb-4">
+			<div class="card-header">
+				PROJECT INFORMATION
+			</div>
+			<div class="card-body">
+				<form asp-controller="Projects" asp-action="EditProject" method="post">
+					<input type="hidden" data-val-required="The ID field is required." id="Id" name="Id" value=@data?.project?.Id />
+					<div class="mb-3">
+						<label class="form-label">Title <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" value="@data?.project?.Name" id="Name" name="Name">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Version Control Link <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" value=@data?.project?.VCLink id="VCLink" name="VCLink">
+					</div>
+					<div class="form-control p-0">
+						<textarea name="Description" class="summernote form-control" rows="12">@data?.project?.Description</textarea>
+					</div>
+					<br/>
+					<div class="mb-3">
+						<label class="form-label">Status</label>
+						<select class="form-select" name="Status" value="@data?.project?.Status">
+							<option value="0">Not Yet Started</option>
+							<option value="1">In Progress</option>
+							<option value="2">Completed/Milestone</option>
+						</select>
+					</div>
+					<hr/>
+					<button type="submit" class="btn btn-outline-theme">Edit</button>
+				</form>
+			</div>
+		</div>
+		<br />
+		<div class="card mb-4">
+			<div class="card-header">
+				PROJECT TASKS
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-sm table-hover text-nowrap small mb-4">
+						<!--text-nowrap-->
+						<thead class="table-dark">
+							<tr>
+								<th>NAME</th>
+								<th>TYPE</th>
+								<th>DATE CREATED</th>
+								<th></th>
+								<!--Make sure the number of Table Columns match up with the Data Points for each item-->
+							</tr>
+						</thead>
+						<tbody>
+							@foreach(var pt in data?.projectTasks) {
+								<tr class="project-task-row">
+									<td class="ptname"><abbr title="@pt.Description" class="text-decoration-none">@pt.Name</abbr></td>
+									<td>@pt.Type</td>
+									<td>@pt.Timestamp</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+					<hr />
+					<button data-bs-toggle="modal" data-bs-target="#AddTaskModal" class="btn btn-outline-theme">ADD TASK</button>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card mb-4">
+			<div class="card-header">
+				DELETE PROJECT AND TASKS
+			</div>
+			<div class="card-body">
+				<form asp-controller="Projects" asp-action="DeleteProject">
+					<input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@data?.project?.Id />
+					<div class="mb-3">
+						<input type="text" class="form-control" data-val-required="Name is required." id="ProjectName" name="ProjectName" palceholder="Enter Project Name to Delete" required>
+					</div>
+					<hr/>
+					<button type="submit" class="btn btn-outline-theme">DELETE PROJECT</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

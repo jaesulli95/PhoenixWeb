@@ -1,0 +1,8 @@
+.app {
+	padding-top: $app-header-height;
+}
+
+body:not(.app-init) .app * {
+	transition: none !important;
+	animation: none !important;
+}

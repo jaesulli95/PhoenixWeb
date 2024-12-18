@@ -1,0 +1,60 @@
+.navbar {
+	&.navbar-sticky {
+		top: $app-header-height + $app-content-padding-y;
+		position: sticky;
+		padding: $spacer 0;
+
+		@if $enable-rtl {
+			border-right: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+			margin-right: $spacer;
+		} @else {
+			border-left: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+			margin-left: $spacer;
+		}
+		
+		& .nav {
+			width: 100%;
+			flex-direction: column;
+			
+			& .nav-link {
+				color: rgba(var(--#{$prefix}body-color-rgb), .6);
+				padding: $spacer * .3 $spacer * 1.6;
+				position: relative;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					left: rem(-0.5px);
+					top: 50%;
+					margin-top: rem(-6px);
+					width: rem(0.5px);
+					height: rem(12px);
+					transition: $transition-base;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					margin-top: rem(-0.5px);
+					height: 0.5px;
+					width: $spacer;
+					transition: $transition-base;
+				}
+				
+				&:hover {
+					color: rgba(var(--#{$prefix}body-color-rgb), 1);
+				}
+				&.active {
+					color: var(--#{$prefix}theme);
+					font-weight: $font-weight-semibold;
+					
+					&:before,
+					&:after {
+						background: var(--#{$prefix}theme);
+					}
+				}
+			}
+		}
+	}
+}

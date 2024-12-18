@@ -1,0 +1,112 @@
+.profile {
+	display: flex;
+	margin: $spacer;
+	
+	@include media-breakpoint-down(lg) {
+		display: block;
+	}
+	& .profile-tab {
+		position: relative;
+		padding: 0 $spacer;
+		flex: 1;
+		font-size: $font-size-sm;
+		
+		@include media-breakpoint-down(lg) {
+			overflow: scroll;
+			padding: 0 $spacer;
+			display: flex;
+			flex-wrap: nowrap;
+		}
+
+		& .nav-item {
+			& .nav-link {
+				text-align: center;
+				
+				& .nav-value {
+					font-size: $font-size-sm * 1.5;
+					font-weight: $font-weight-semibold;
+					margin-bottom: $spacer * -.5;
+					
+					@include media-breakpoint-down(md) {
+						font-size: $font-size-sm * 1.15;
+					}
+				}
+			}
+			& + .nav-item {
+				@if ($enable-rtl) {
+					margin-right: $spacer * 2;
+				} @else {
+					margin-left: $spacer * 2;
+				}
+			}
+		}
+	}
+	& .profile-sidebar {
+		width: rem(230px);
+		padding: $spacer;
+		
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+	& .profile-content {
+		flex: 1;
+		padding: 0 $spacer;
+	}
+	& .profile-img-list {
+		list-style-type: none;
+		margin: rem(-1px);
+		padding: 0;
+		
+		@include clearfix();
+		
+		& .profile-img-list-item {
+			width: 25%;
+			padding: rem(1px);
+			
+			@if ($enable-rtl) {
+				float: right;
+			} @else {
+				float: left;
+			}
+			
+			&.main {
+				width: 50%;
+				padding: rem(1px);
+			}
+			& .profile-img-list-link {
+				display: block;
+				padding-top: calc(75% - 1px);
+				overflow: hidden;
+				position: relative;
+				
+				& img,
+				& .profile-img-content {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					max-width: 100%;
+					background-size: cover;
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+			}
+			&.with-number {
+				& .profile-img-number {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					right: 0;
+					color: $white;
+					font-size: $font-size-base * 1.75;
+					font-weight: $font-weight-bold;
+					line-height: rem(26px);
+					margin-top: $font-size-base * -1.75 * .5;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

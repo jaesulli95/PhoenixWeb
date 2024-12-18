@@ -1,0 +1,67 @@
+.card-expand {
+	& .app-content {
+		z-index: $app-header-zindex + 100;
+		position: relative;
+		height: calc(100vh - #{$app-header-height});
+		overflow: hidden;
+	}
+}
+.card {
+	&.card-expand {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: $app-header-zindex + 100;
+		border-radius: $card-border-radius;
+		margin: 0 !important;
+		padding: rem(5px);
+		background: $card-expand-bg;
+		backdrop-filter: $card-expand-backdrop-filter;
+		
+		& > .card-body {
+			flex: 1 0 0;
+			overflow: scroll;
+		}
+	}
+}
+
+
+.card {
+	--bs-card-border-radius: 0;
+	
+	& .card-header {
+		font-size: $card-cap-font-size;
+		font-weight: $card-cap-font-weight;
+		
+		&.with-btn {
+			display: flex;
+			
+			& .card-header-btn {
+				margin-left: auto;
+				display: flex;
+				
+				& .btn {
+					background: none;
+					padding: 0;
+					width: rem(20px);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: none;
+					color: $white;
+					font-size: rem(16px);
+					margin: rem(-2px) rem(2px);
+				}
+			}
+		}
+	}
+	& > div + div {
+		margin-top: $card-cap-gap;
+	}
+	& .card-body {
+		background: rgba($white, .075);
+		padding: $card-body-padding-y $card-body-padding-x;
+	}
+}

@@ -1,0 +1,116 @@
+.app-theme-panel {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: $app-header-zindex + 10;
+	width: 0;
+	display: flex;
+	align-items: center;
+	padding-bottom: 10%;
+	
+	@if $enable-rtl {
+		left: -$app-theme-panel-width;
+		transition: left .2s ease-in-out;
+	} @else {
+		right: -$app-theme-panel-width;
+		transition: right .2s ease-in-out;
+	}
+	
+	& .app-theme-panel-container {
+		width: $app-theme-panel-width;
+		position: absolute;
+		
+		@if $enable-rtl {
+			left: 0;
+		} @else {
+			right: 0;
+		}
+	}
+	& .app-theme-panel-content {
+		width: $app-theme-panel-width;
+		background: var(--#{$prefix}app-theme-panel-bg);
+		box-shadow: $dropdown-box-shadow;
+		padding: $spacer * .5;
+		z-index: 10;
+		backdrop-filter: $app-theme-panel-backdrop-filter;
+		
+		& .app-theme-list {
+			margin: rem(-1px);
+			display: flex;
+			flex-wrap: wrap;
+	
+			& .app-theme-list-item {
+				padding-top: 20%;
+				width: 20%;
+				position: relative;
+		
+				& .app-theme-list-link {
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					margin: rem(1px);
+					display: block;
+					text-decoration: none;
+					transition: $transition-base;
+			
+					&:hover {
+						opacity: .6;
+					}
+				}
+				&.active {
+					& .app-theme-list-link {
+						opacity: 1;
+				
+						&:before {
+							content: '\f00c';
+							position: absolute;
+							left: 0;
+							right: 0;
+							top: 0;
+							bottom: 0;
+							font-size: rem(14px);
+							color: $black;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+					
+							@include fontawesome();
+						}
+					}
+				}
+			}
+		}
+	}
+	& .app-theme-toggle-btn {
+		position: absolute;
+		top: 50%;
+		margin-top: $spacer * -1.25;
+		width: $spacer * 2.5;
+		height: $spacer * 2.5;
+		font-size: $font-size-base * 1.5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--#{$prefix}app-theme-panel-color);
+		background: var(--#{$prefix}app-theme-panel-bg);
+		backdrop-filter: $app-theme-panel-backdrop-filter;
+		text-align: center;
+		
+		@if $enable-rtl {
+			right: 0;
+			margin-right: $spacer * -2.5;
+		} @else {
+			left: 0;
+			margin-left: $spacer * -2.5;
+		}
+	}
+	&.active {
+		@if $enable-rtl {
+			left: 0;
+		} @else {
+			right: 0;
+		}
+	}
+}

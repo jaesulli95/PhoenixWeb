@@ -1,0 +1,89 @@
+﻿@{
+	ViewData["Title"] = "Chores";
+}
+
+<div class="d-flex align-items-center mb-3">
+	<div>
+		<h1 class="page-header mb-0">Chores</h1>
+	</div>
+
+	<div class="ms-auto">
+		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
+		   data-bs-toggle="modal" data-bs-target="#modalLg">
+			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
+			ADD CHORE
+		</a>
+	</div>
+</div>
+<!-- Modal to Create New Projects BEGIN -->
+<div class="modal fade" id="modalLg">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add Chore</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group mb-3">
+					<label class="form-label" for="exampleFormControlInput1">Name</label>
+					<input type="text" class="form-control" id="ChoreName" />
+				</div>
+
+				<div class="input-group mb-4">
+					<div class="flex-fill position-relative z-1">
+						<div class="input-group">
+							<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0">
+								<i class="fa fa-search opacity-5"></i>
+							</div>
+							<input type="text" class="form-control ps-30px" placeholder="Project Name">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal to Create New Projects END-->
+
+<div class="d-flex">
+	<div class="mb-sm-4 mb-3 d-sm-flex">
+		<div class="mt-sm-0 mt-2 me-2"><a href="#" class="text-body text-decoration-none d-flex align-items-center"><iconify-icon icon="material-symbols-light:download-sharp" class="fs-20px opacity-5 me-2 my-n1"></iconify-icon> Export</a></div>
+	</div>
+</div>
+
+<div class="card">
+	<ul class="nav nav-tabs nav-tabs-v2 small text-uppercase mb-4 px-2">
+		<li class="nav-item me-4"><a href="#allTab" class="nav-link active px-2 py-2" data-bs-toggle="tab">All</a></li>
+		<li class="nav-item me-4"><a href="#KitchenTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Kitchen</a></li>
+		<li class="nav-item me-4"><a href="#BedroomTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Bedroom</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="input-group mb-4">
+			<div class="flex-fill position-relative z-1">
+				<div class="input-group">
+					<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0">
+						<i class="fa fa-search opacity-5"></i>
+					</div>
+					<input type="text" class="form-control ps-30px" placeholder="Search Chores">
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade show active" id="allTab">
+			<div class="table-responsive">
+				<table class="table table-hover text-nowrap small mb-4">
+					<thead>
+						<tr>
+							<th>CHORE-DESCRIPTOR</th>
+							<th>FREQUENCY</th>
+							<th>DUE DATE</th>
+							<th>LAST COMPLETION DATE</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

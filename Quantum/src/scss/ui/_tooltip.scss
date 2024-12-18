@@ -1,0 +1,24 @@
+.tooltip {
+	transition: none;
+	
+	& .tooltip-inner {
+		backdrop-filter: $tooltip-backdrop-filter;
+		transition: $transition-base;
+	}
+	&.bs-tooltip-bottom .tooltip-arrow::before, 
+	&.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+		bottom: 0;
+	}
+	&.bs-tooltip-top .tooltip-arrow::before, 
+	&.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+		top: 0;
+	}
+	&.bs-tooltip-left .tooltip-arrow::before, 
+	&.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+		left: 0;
+	}
+	&.bs-tooltip-right .tooltip-arrow::before, 
+	&.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+		right: 0;
+	}
+}

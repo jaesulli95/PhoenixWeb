@@ -1,0 +1,32 @@
+.widget-reminder {
+	& .widget-reminder-item {
+		position: relative;
+		display: flex;
+		font-size: $font-size-sm;
+	}
+	& .widget-reminder-header + .widget-reminder-item,
+	& .widget-reminder-item + .widget-reminder-header,
+	& .widget-reminder-item + .widget-reminder-item {
+		border-top: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+	}
+	& .widget-reminder-time,
+	& .widget-reminder-content {
+		padding: $spacer;
+	}
+	& .widget-reminder-content {
+		flex: 1;
+	}
+	& .widget-reminder-time {
+		width: rem(80px);
+		
+		@if $enable-rtl {
+			text-align: left;
+		} @else {
+			text-align: right;
+		}
+	}
+	& .widget-reminder-divider {
+		width: rem(3px);
+		background: var(--#{$prefix}border-color);
+	}
+}

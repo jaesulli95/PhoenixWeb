@@ -1,0 +1,260 @@
+.daterangepicker {
+	body & {
+		z-index: $app-header-zindex + 10;
+		border-color: $dropdown-border-color;
+		border-width: $dropdown-border-width;
+		font-family: inherit;
+		font-size: inherit;
+		background: $dropdown-bg;
+		border-radius: 0;
+		box-shadow: $dropdown-box-shadow;
+		backdrop-filter: $dropdown-backdrop-filter;
+		width: auto;
+		margin-top: 0;
+		
+		&:before,
+		&:after {
+			display: none;
+		}
+		& select.monthselect,
+		& select.yearselect {
+			font-size: $font-size-base;
+		}
+		& .drp-calendar {
+			max-width: inherit;
+			padding: $spacer !important;
+			
+			& .calendar-table {
+				background: none;
+				border: none;
+				border-radius: 0;
+				
+				& table {
+					& thead,
+					& tbody {
+						& .week {
+							font-size: $font-size-base * .85;
+							color: $gray-100;
+							font-weight: $font-weight-bold;
+						}
+					}
+					& thead {
+						& tr {
+							& th {
+								min-width: auto;
+								width: auto;
+								height: auto;
+								line-height: 1;
+								padding: $spacer * .5;
+								color: var(--#{$prefix}body-color);
+								font-weight: $font-weight-bold;
+								font-size: inherit;
+								border: none;
+								
+								&.prev,
+								&.next {
+									& span {
+										border-color: rgba(var(--#{$prefix}body-color-rgb), .5);
+									}
+									&:hover,
+									&:focus {
+										background: none;
+										color: var(--#{$prefix}theme);
+										
+										& span {
+											border-color: var(--#{$prefix}theme);
+										}
+									}
+								}
+								&.month {
+									& .yearselect,
+									& .monthselect {
+										border-color: var(--#{$prefix}border-color);
+										border-width: var(--#{$prefix}border-width);
+										background: transparent;
+										border-radius: $component-border-radius;
+										color: var(--#{$prefix}body-color);
+										transition: $transition-base;
+										
+										&:focus {
+											outline: none;
+											border-color: $input-focus-border-color;
+											box-shadow: 0 0 0 0.125rem $input-focus-border-color;
+										}
+									}
+								}
+							}
+							&:last-child {
+								& th {
+									font-size: $font-size-base * .85;
+									padding-bottom: rem(8px);
+								}
+							}
+						}
+					}
+					& tbody {
+						& tr {
+							& td {
+								min-width: rem(32px);
+								width: rem(32px);
+								height: rem(32px);
+								line-height: 1.3;
+								padding: $spacer * .5;
+								font-weight: $font-weight-normal;
+								color: rgba(var(--#{$prefix}body-color-rgb), .75);
+								border-color: $dropdown-border-color;
+								border-width: var(--#{$prefix}border-width);
+								font-size: $font-size-base * .9;
+								border-radius: 0 !important;
+								
+								&.available {
+									&:hover,
+									&:focus {
+										background: var(--#{$prefix}theme);
+										border-color: var(--#{$prefix}theme);
+										color: var(--#{$prefix}theme-color);
+									}
+									&.in-range {
+										background: rgba(var(--#{$prefix}theme-rgb), .25);
+										border-color: rgba(var(--#{$prefix}theme-rgb), .25);
+										color: var(--#{$prefix}body-color);
+										border-radius: 0;
+									}
+									&.active {
+										background: var(--#{$prefix}theme);
+										border-color: var(--#{$prefix}theme);
+										color: var(--#{$prefix}theme-color);
+									}
+									&.start-date {
+										border-radius: 0;
+									}
+									&.end-date {
+										border-radius: 0;
+									}
+								}
+								&.off {
+									background: none;
+									color: rgba(var(--#{$prefix}body-color-rgb), .25);
+								}
+							}
+						}
+					}
+				}
+			}
+			&.left {
+				& .calendar-table {
+					padding: 0 !important;
+				}
+			}
+			&.right {
+				border: none;
+			}
+		}
+		& .drp-buttons {
+			padding: $spacer;
+			border-top: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+			background: none;
+			
+			& .btn {
+				font-weight: $btn-font-weight;
+				text-transform: uppercase;
+				font-size: $font-size-sm;
+				min-width: rem(60px);
+				
+				&.btn-primary {
+					@include button-variant($theme, $theme);
+				}
+				&.btn-default {
+					@include button-variant($default, $default);
+				}
+			}
+		}
+		& .ranges {
+			display: none;
+		}
+		& .drp-selected {
+			font-size: $font-size-sm;
+			font-weight: $font-weight-semibold;
+			padding: 0;
+		}
+		&.show-ranges {
+			& .ranges {
+				position: relative;
+				display: block;
+				
+				@include media-breakpoint-down(md) {
+					float: none;
+					margin: 0;
+					padding: rem(10px);
+					border-bottom: var(--#{$prefix}border-width) solid $dropdown-border-color;
+					overflow: scroll;
+					max-width: rem(560px);
+				}
+				
+				& ul {
+					@include media-breakpoint-down(md) {
+						width: auto;
+						white-space: nowrap;
+						display: flex;
+						flex-wrap: nowrap;
+						
+						@if $enable-rtl {
+							padding-left: rem(10px);
+						} @else {
+							padding-right: rem(10px);
+						}
+					}
+					
+					& li {
+						color: var(--#{$prefix}body-color);
+						font-size: $font-size-base - rem(1px);
+						font-weight: $font-weight-semibold;
+						
+						@include media-breakpoint-down(md) {
+							border-radius: $component-border-radius;
+							
+							@if $enable-rtl {
+								margin-left: rem(10px) !important;
+							} @else {
+								margin-right: rem(10px) !important;
+							}
+						}
+						
+						&:hover,
+						&:focus {
+							background: rgba(var(--#{$prefix}body-color-rgb), .15);
+							color: rgba(var(--#{$prefix}body-color-rgb), .75);
+						}
+						&.active {
+							background: var(--#{$prefix}theme);
+							color: var(--#{$prefix}theme-color);
+							
+							@if $enable-rtl {
+								margin-left: rem(-1px);
+							} @else {
+								margin-right: rem(-1px);
+							}
+						}
+					}
+				}
+			}
+			& .drp-calendar {
+				&.left { 
+					@if $enable-rtl {
+						border-right: 1px solid rgba(var(--#{$prefix}body-color-rgb), .15) !important;
+					} @else {
+						border-left: 1px solid rgba(var(--#{$prefix}body-color-rgb), .15) !important;
+					}
+					
+					@include media-breakpoint-down(md) {
+						@if $enable-rtl {
+							border-right: none !important;
+						} @else {
+							border-left: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

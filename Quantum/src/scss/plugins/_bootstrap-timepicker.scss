@@ -1,0 +1,92 @@
+.bootstrap-timepicker-widget {
+  &.dropdown-menu {
+    &.open {
+      width: rem(200px);
+      padding: $spacer * .5;
+    
+      &:before,
+      &:after {
+        display: none;
+      }
+      & table {
+        & tbody {
+          & tr {
+            & td {
+              padding: 0;
+              height: auto;
+              
+              &.separator {
+                padding: 0 $spacer * .25;
+              }
+              &:not(.separator) {
+                min-width: rem(50px);
+              }
+              & input {
+                border-radius: $component-border-radius;
+                border: 1px solid $input-border-color;
+                height: $input-height;
+                padding: rem(5px);
+                line-height: $input-line-height;
+                background: none;
+                color: $input-color;
+                display: block;
+                width: 100%;
+                margin: rem(5px) 0;
+                transition: $transition-base;
+                
+                &:focus {
+                  border-color: $input-focus-border-color;
+                  outline: none;
+                  box-shadow: $input-btn-focus-box-shadow;
+                }
+              }
+              & a {
+                padding: 0;
+                outline: 0;
+                color: rgba(var(--#{$prefix}body-color-rgb), .3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: rem(25px);
+                width: auto;
+                margin: 0 auto;
+                border: none;
+                text-decoration: none;
+                border-radius: $component-border-radius;
+                transition: $transition-base;
+                
+                &:hover {
+                  background: rgba(var(--#{$prefix}body-color-rgb), .15);
+                  color: rgba(var(--#{$prefix}body-color-rgb), .75);
+                }
+                & .glyphicon {
+                  font-family: Font Awesome\ 5 Free,Font Awesome\ 5 Pro,FontAwesome!important;
+                  font-weight: 900;
+                  font-style: normal;
+                  font-variant: normal;
+                  text-rendering: auto;
+                  
+                  &.glyphicon-chevron-up {
+                    &:before {
+                      content: '\f077';
+                    }
+                  }
+                  &.glyphicon-chevron-down {
+                    &:before {
+                      content: '\f078';
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+body .bootstrap-timepicker .input-group-addon i {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

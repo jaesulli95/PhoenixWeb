@@ -1,0 +1,88 @@
+.app {
+  .slider {
+    &.slider-horizontal {
+      height: rem(16px);
+      width: 100%;
+    
+      & .slider-track {
+        height: rem(4px);
+        margin-top: rem(-2px);
+      }
+    }
+    &.slider-vertical {
+      margin: 0 auto;
+      display: block;
+      width: rem(16px);
+      
+      & .slider-track {
+        width: rem(4px);
+        
+        @if $enable-rtl {
+        	right: 50%;
+					margin-right: rem(-2px);
+				} @else {
+        	left: 50%;
+					margin-left: rem(-2px);
+				}
+      }
+    }
+    &.slider-disabled {
+      opacity: 0.5;
+      
+      & .slider-track {
+      	background: rgba(var(--#{$prefix}body-color-rgb), .15);
+      }
+      & .slider-handle {
+        background: $white;
+        cursor: not-allowed;
+      }
+    }
+    & .slider-selection {
+    	border-radius: $component-border-radius;
+    }	
+    & .slider-track {
+      box-shadow: none;
+      background: rgba(var(--#{$prefix}body-color-rgb), .15);
+      border-radius: $component-border-radius;
+      
+      & .slider-selection {
+        background: var(--#{$prefix}theme);
+        box-shadow: none;
+      }
+    }
+    & .slider-handle {
+      background: $white;
+      height: rem(16px);
+      width: rem(16px);
+      box-shadow: 0 rem(1px) rem(6px) rgba(var(--#{$prefix}body-color-rgb), .25);
+      border-radius: $component-border-radius;
+    }
+    & .tooltip {
+    	position: absolute;
+    	
+      &.show {
+        opacity: 1;
+      }
+      &.bs-tooltip-top {
+        margin-top: rem(-30px);
+      }
+      &.bs-tooltip-bottom {
+        margin-top: rem(25px);
+      }
+      &.bs-tooltip-left {
+        @if $enable-rtl {
+					margin-right: rem(-30px);
+				} @else {
+					margin-left: rem(-30px);
+				}
+      }
+      &.bs-tooltip-right {
+        @if $enable-rtl {
+					margin-right: rem(5px);
+				} @else {
+					margin-left: rem(5px);
+				}
+      }
+    }
+  }
+}

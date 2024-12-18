@@ -1,0 +1,80 @@
+.table {
+	&.table-card {
+		& thead,
+		& tbody {
+			& > tr {
+				& td,
+				& th {
+					&:first-child {
+						@if $enable-rtl {
+							padding-right: $card-spacer-x;
+						} @else {
+							padding-left: $card-spacer-x;
+						}
+					}
+					&:last-child {
+						@if $enable-rtl {
+							padding-left: $card-spacer-x;
+						} @else {
+							padding-right: $card-spacer-x;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.table-xs {
+		font-size: rem(12px);
+		
+		& thead,
+		& tbody,
+		& tfoot {
+			& th {
+				padding-top: rem(4px);
+				padding-bottom: rem(4px);
+				padding-left: rem(8px);
+			}
+			& td {
+				padding: rem(5px) rem(8px);
+			}
+		}
+	}
+}
+table {
+	&.table-thead-sticky {
+		& thead {
+			position: sticky;
+			top: 0;
+			background: var(--#{$prefix}table-bg);
+			box-shadow: 0 0 0 1px var(--#{$prefix}table-border-color);
+			backdrop-filter: $table-bg-backdrop-filter;
+		}
+	}
+	&.table-tfoot-sticky {
+		& tfoot {
+			position: sticky;
+			bottom: 0;
+			background: var(--#{$prefix}table-bg);
+			box-shadow: 0 0 0 1px var(--#{$prefix}table-border-color);
+			backdrop-filter: $table-bg-backdrop-filter;
+		}
+	}
+	@for $i from 1 through 20 {
+		&.table-px-#{$i}px {
+			& td,
+			& th {
+				padding-left: #{$i}px !important;
+				padding-right: #{$i}px !important;
+			}
+		}
+	}
+	@for $i from 1 through 20 {
+		&.table-py-#{$i}px {
+			& td,
+			& th {
+				padding-top: #{$i}px !important;
+				padding-bottom: #{$i}px !important;
+			}
+		}
+	}
+}

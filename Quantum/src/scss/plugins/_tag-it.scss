@@ -1,0 +1,128 @@
+.tagit {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+	&.form-control {
+		height: auto;
+		min-height: $input-height;
+	}
+	&.ui-widget {
+		margin-bottom: 0;
+		font-family: inherit;
+		box-shadow: none !important;
+		border-color: $input-border-color !important;
+		border-width: $input-border-width !important;
+		color: $input-color !important;
+		position: relative !important;
+		padding: $input-padding-y - rem(1px) $input-padding-x !important;
+		line-height: $input-line-height !important;
+		border-radius: $component-border-radius !important;
+		transition: $transition-base;
+		display: flex;
+		flex-wrap: wrap;
+		
+		& li {
+			float: none;
+			
+			&.tagit-choice {
+				font-size: $font-size-sm !important;
+				font-weight: $font-weight-semibold;
+				padding: 0 rem(6px) !important;
+				margin-top: 0 !important;
+				margin-bottom: 0 !important;
+				border: none;
+				background: rgba(var(--#{$prefix}body-color-rgb), .15) !important;
+				color: $input-color;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 0;
+		
+				@if $enable-rtl {
+					margin-left: rem(5px) !important;
+				} @else {
+					margin-right: rem(5px) !important;
+				}				
+				& .tagit-close {
+					position: relative;
+					text-align: center;
+					top: 0;
+					height: rem(16px);
+					width: rem(16px);
+					text-decoration: none;
+					display: flex;
+					align-items: center;
+					
+					@if $enable-rtl {
+						margin: 0 rem(5px) 0 rem(-5px);
+					} @else {
+						margin: 0 rem(-5px) 0 rem(5px);
+					}
+					
+					& .ui-icon-close {
+						font-size: $font-size-base - rem(4px);
+						color: rgba(var(--#{$prefix}body-color-rgb), .5);
+						text-indent: 0;
+						height: 100%;
+						padding-top: rem(2px);
+						background-image: none;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						
+						@include fontawesome();
+			
+						&:after {
+							content: '\f00d' !important;
+						}
+						&:hover {
+							box-shadow: none !important;
+							color: rgba(var(--#{$prefix}body-color-rgb), 0.75);
+						}
+					}
+					&:hover,
+					&:focus {
+						& .ui-icon-close {
+							&:before {
+								color: rgba(var(--#{$prefix}body-color-rgb), .4);
+							}
+						}
+					}
+				}
+			}
+			&.tagit-new {
+				margin: rem(-1px) 0;
+  			height: rem(22px);
+  			display: flex;
+  			align-items: center;
+  			
+  			& input {
+  				color: $input-color;
+  			}
+			}
+		}
+	}
+}
+.tagit-autocomplete {
+	border: $dropdown-border-width solid $dropdown-border-color !important;
+	padding: $dropdown-padding-y 0;
+	background: $dropdown-bg;
+	border-radius: $dropdown-border-radius;
+	box-shadow: $dropdown-box-shadow;
+	backdrop-filter: $dropdown-backdrop-filter;
+	
+	& .ui-menu-item {
+		& .ui-menu-item-wrapper {
+			padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+			border: none;
+			color: $dropdown-link-color;
+			
+			&.ui-state-active {
+				background: $dropdown-link-hover-bg;
+				color: $dropdown-link-color;
+				margin: 0;
+			}
+		}
+	}
+}

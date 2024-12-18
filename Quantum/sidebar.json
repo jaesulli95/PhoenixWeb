@@ -1,0 +1,62 @@
+﻿{
+	"sidebarMenu": [
+		{
+			"text": "PHOENIX-WEB",
+			"is_header": true,
+			"display":  true
+		},
+		{
+			"controller": "Home",
+			"action": "Index",
+			"icon": "fa-home",
+			"text": "HOME",
+			"display": true
+		},
+		{
+			"controller": "Projects",
+			"action": "Index",
+			"icon": "fa-folder",
+			"text": "PROJECTS",
+			"display": true
+		},
+		{
+			"is_divider": true,
+			"display": false
+		},
+		{
+			"text": "HOUSEHOLD",
+			"is_header": true,
+			"display": false
+		},
+		{
+			"controller": "Chores",
+			"action": "Index",
+			"icon": "fa-check",
+			"text": "CHORES",
+			"display": false
+		},
+		{
+			"controller": "Groceries",
+			"action": "Index",
+			"icon": "fa-coffee",
+			"text": "GROCERIES",
+			"display": false
+		},
+		{
+			"is_divider": true,
+			"display": false
+		},
+		{
+			"text": "BOOKS",
+			"is_header": true,
+			"display":  true
+		},
+		{
+			"controller": "Books",
+			"action": "Index",
+			"icon": "fa-book",
+			"text": "READ/TBR",
+			"display": true
+		}
+	]
+}

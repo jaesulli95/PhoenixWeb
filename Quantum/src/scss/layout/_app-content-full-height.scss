@@ -1,0 +1,22 @@
+.app-content-full-height {
+	& .app-content {
+		height: calc(100vh - #{$app-header-height});
+	}
+	&.app-without-header {
+		& .app-content {
+			height: 100vh;
+		}
+	}
+	&.skip-mobile {
+		@include media-breakpoint-down(md) {
+			& .app-content {
+				height: initial;
+			}
+			&.app-without-header {
+				& .app-content {
+					height: initial;
+				}
+			}
+		}
+	}
+}

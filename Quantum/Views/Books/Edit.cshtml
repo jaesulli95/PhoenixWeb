@@ -1,0 +1,40 @@
+﻿@model Quantum.Models.Book
+@{
+	ViewData["Title"] = "Edit Book";
+}
+<div class="row gx-4">
+	<div class="col-xl-4">
+		<div class="card mb-4">
+			<div class="card-header">
+				BOOK INFORMATION
+			</div>
+			<div class="card-body">
+				<form asp-controller="Books" asp-action="EditBook" method="post">
+					<input type="hidden" data-val-required="The ID field is required." id="Id" name="id" value=@Html.DisplayFor(book => book.id) />
+					<div class="mb-3">
+						<label class="form-label">Title</label>
+						<input type="text" class="form-control" value="@Html.DisplayFor(book => book.Name)" name="Name">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Author</label>
+						<input type="text" class="form-control" value="@Html.DisplayFor(book => book.Author)" name="Author">
+					</div>
+					<br />
+					<div class="mb-3">
+						<label class="form-label">Status</label>
+						<select class="form-select" name="Status" asp-for=Status>
+							<option value="0">To Be Read</option>
+							<option value="1">In-Progress</option>
+							<option value="2">Completed</option>
+							<option value="3">Did Not Finish</option>
+						</select>
+					</div>
+					<hr />
+					<button type="submit" class="btn btn-outline-theme">Edit</button>
+				</form>
+			</div>
+		</div>
+		<br />
+		<br />
+	</div>
+</div>

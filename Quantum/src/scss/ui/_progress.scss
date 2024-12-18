@@ -1,0 +1,3 @@
+.progress-bar-striped {
+  @include gradient-striped($progress-bar-striped-color);
+}

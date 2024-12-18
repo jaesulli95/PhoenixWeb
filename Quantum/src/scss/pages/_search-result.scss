@@ -1,0 +1,108 @@
+.search-result {
+	& .search-input {
+		position: relative;
+		max-width: rem(720px);
+		margin-bottom: rem(15px);
+	}
+	& .search-close {
+		position: absolute;
+		top: 50%;
+		margin-top: rem(-12px);
+		width: rem(24px);
+		height: rem(24px);
+		text-align: center;
+		font-size: rem(20px);
+		font-weight: $font-weight-light;
+		padding: 0 0 rem(2px);
+		color: var(--#{$prefix}body-color);
+		background: rgba(var(--#{$prefix}body-color-rgb), .25);
+		text-decoration: none;
+		border-radius: $component-border-radius;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		@if $enable-rtl {
+			left: rem(8px);
+		} @else {
+			right: rem(8px);
+		}
+		
+		&:hover,
+		&:focus{ 
+			text-decoration: none;
+			background: rgba(var(--#{$prefix}body-color-rgb), .5);
+			color: var(--#{$prefix}body-color);
+		}	
+	}
+	& .search-result-list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		& .search-result-item {
+			padding: $spacer * 1.25 $spacer;
+			display: flex;
+			align-items: center;
+			
+			&:last-child {
+				border-bottom: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+			}
+			& + .search-result-item {
+				border-top: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+			}
+			& .search-result-media {
+				width: rem(100px);
+				height: rem(100px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+				@include media-breakpoint-down(md) {
+					width: rem(60px);
+					height: rem(60px);
+				}
+				
+				& img {
+					max-width: 100%;
+					max-height: 100%;
+				}
+				& + .search-result-content {
+					@if $enable-rtl {
+						padding-right: $spacer * 1.5;
+					} @else {
+						padding-left: $spacer * 1.5;
+					}
+				}
+			}
+			& .search-result-content {
+				flex: 1;
+				font-size: $font-size-sm;
+				
+				& h3 {
+					font-size: $font-size-base * 1.25;
+					margin: 0 0 $spacer * .25;
+					
+					& a {
+						color: var(--#{$prefix}headings-color);
+						text-decoration: none;
+			
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+				& a {
+					text-decoration: none;
+			
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				& p {
+					margin-bottom: $spacer;
+				}
+			}
+		}
+	}
+}

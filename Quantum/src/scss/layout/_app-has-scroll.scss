@@ -1,0 +1,36 @@
+.app {
+	&:before {
+		content: '';
+		position: fixed;
+		height: 0;
+		background: transparent;
+		top: 0;
+		left: 0;
+		right: 0;
+		transition: $transition-base;
+		z-index: $app-has-scroll-zindex;
+	}
+	&.app-has-scroll {
+		&:before {
+			height: $app-header-height;
+			backdrop-filter: var(--#{$prefix}app-has-scroll-backdrop-filter);
+			background: var(--#{$prefix}app-has-scroll-backdrop-bg);
+		}
+		&.app-without-header {
+			&:before {
+				height: 0;
+			}
+		}
+		&.app-with-top-nav {
+			&:before {
+				background: var(--#{$prefix}app-has-scroll-with-top-nav-backdrop-bg);
+				height: $app-header-height + $app-top-nav-height;
+			}
+			&.app-without-header {
+				&:before {
+					height: $app-top-nav-height;
+				}
+			}
+		}
+	}
+}
