@@ -20,36 +20,18 @@
 			"display": true
 		},
 		{
-			"is_divider": true,
-			"display": false
-		},
-		{
-			"text": "HOUSEHOLD",
-			"is_header": true,
-			"display": false
-		},
-		{
 			"controller": "Chores",
 			"action": "Index",
 			"icon": "fa-check",
 			"text": "CHORES",
-			"display": false
+			"display": true
 		},
 		{
 			"controller": "Groceries",
 			"action": "Index",
 			"icon": "fa-coffee",
 			"text": "GROCERIES",
-			"display": false
-		},
-		{
-			"is_divider": true,
-			"display": false
-		},
-		{
-			"text": "BOOKS",
-			"is_header": true,
-			"display":  true
+			"display": true
 		},
 		{
 			"controller": "Books",

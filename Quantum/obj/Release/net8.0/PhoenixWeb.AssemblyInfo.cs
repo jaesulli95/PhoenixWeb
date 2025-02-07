@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhoenixWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74d8ef85d179a05f105100df3e704d50f4a631f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0682ad172084de21f10aab07f284bfe27ec5359")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhoenixWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhoenixWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

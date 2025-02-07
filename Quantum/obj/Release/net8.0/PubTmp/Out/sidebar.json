@@ -26,7 +26,7 @@
 		{
 			"text": "HOUSEHOLD",
 			"is_header": true,
-			"display": true
+			"display": false
 		},
 		{
 			"controller": "Chores",

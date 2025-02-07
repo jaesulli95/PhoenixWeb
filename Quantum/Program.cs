@@ -48,5 +48,5 @@ app.MapFallback(context => {
 });
 
 app.MapRazorPages();
+//app.Run("https://0.0.0.0:10802");
 app.Run();
-

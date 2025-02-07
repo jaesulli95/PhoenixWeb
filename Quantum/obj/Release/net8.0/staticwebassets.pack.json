@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\PhoenixWeb.1u5y7470h9.bundle.scp.css"
     },
     {
+      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\Phoenix\\phoenix-books.js",
+      "PackagePath": "staticwebassets\\Phoenix\\phoenix-books.js"
+    },
+    {
+      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\Phoenix\\phoenix-web.js",
+      "PackagePath": "staticwebassets\\Phoenix\\phoenix-web.js"
+    },
+    {
       "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\css\\app.min.css",
       "PackagePath": "staticwebassets\\css\\app.min.css"
     },

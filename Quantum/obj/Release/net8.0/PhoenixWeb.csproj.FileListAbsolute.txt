@@ -292,3 +292,4 @@ F:\PhoenixWeb\Quantum\obj\Release\net8.0\refint\PhoenixWeb.dll
 F:\PhoenixWeb\Quantum\obj\Release\net8.0\PhoenixWeb.pdb
 F:\PhoenixWeb\Quantum\obj\Release\net8.0\PhoenixWeb.genruntimeconfig.cache
 F:\PhoenixWeb\Quantum\obj\Release\net8.0\ref\PhoenixWeb.dll
+F:\PhoenixWeb\Quantum\obj\Release\net8.0\PhoenixWeb.sourcelink.json

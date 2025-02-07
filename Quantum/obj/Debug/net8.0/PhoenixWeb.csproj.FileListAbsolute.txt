@@ -285,7 +285,6 @@ F:\PhoenixWeb\Quantum\obj\Debug\net8.0\staticwebassets\msbuild.build.PhoenixWeb.
 F:\PhoenixWeb\Quantum\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PhoenixWeb.props
 F:\PhoenixWeb\Quantum\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PhoenixWeb.props
 F:\PhoenixWeb\Quantum\obj\Debug\net8.0\staticwebassets.pack.json
-F:\PhoenixWeb\Quantum\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 F:\PhoenixWeb\Quantum\obj\Debug\net8.0\PhoenixWeb.csproj.Up2Date
 F:\PhoenixWeb\Quantum\obj\Debug\net8.0\PhoenixWeb.dll
 F:\PhoenixWeb\Quantum\obj\Debug\net8.0\refint\PhoenixWeb.dll
@@ -582,3 +581,11 @@ E:\PhoenixWeb\Quantum\obj\Debug\net8.0\refint\PhoenixWeb.dll
 E:\PhoenixWeb\Quantum\obj\Debug\net8.0\PhoenixWeb.pdb
 E:\PhoenixWeb\Quantum\obj\Debug\net8.0\PhoenixWeb.genruntimeconfig.cache
 E:\PhoenixWeb\Quantum\obj\Debug\net8.0\ref\PhoenixWeb.dll
+F:\PhoenixWeb\Quantum\obj\Debug\net8.0\PhoenixWeb.sourcelink.json
+F:\PhoenixWeb\Quantum\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+F:\PhoenixWeb\Quantum\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\PhoenixWeb\Quantum\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+F:\PhoenixWeb\Quantum\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+F:\PhoenixWeb\Quantum\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\PhoenixWeb\Quantum\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+F:\PhoenixWeb\Quantum\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
