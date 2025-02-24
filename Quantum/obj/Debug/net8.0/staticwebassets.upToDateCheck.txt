@@ -13,7 +13,6 @@ wwwroot\fonts\fa-solid-900.woff2
 wwwroot\fonts\fa-v4compatibility.ttf
 wwwroot\fonts\fa-v4compatibility.woff2
 wwwroot\img\cover.jpg
-wwwroot\img\cover_2.jpg
 wwwroot\img\dashboard\product-1.jpeg
 wwwroot\img\dashboard\product-2.jpeg
 wwwroot\img\dashboard\product-3.jpeg
@@ -196,6 +195,8 @@ wwwroot\img\user\user-6.jpg
 wwwroot\img\user\user-7.jpg
 wwwroot\img\user\user-8.jpg
 wwwroot\img\user\user-9.jpg
+wwwroot\img\WarriorBackground.png
+wwwroot\img\WarriorBackground2.png
 wwwroot\img\widget\cover-1.jpg
 wwwroot\img\widget\cover-2.jpg
 wwwroot\js\app.min.js
@@ -9070,6 +9071,7 @@ wwwroot\lib\tag-it\Makefile
 wwwroot\lib\tag-it\package.json
 wwwroot\lib\tag-it\prototype.js
 wwwroot\lib\tag-it\README.markdown
+wwwroot\Phoenix\phoenix.css
 wwwroot\Phoenix\phoenix-books.js
 wwwroot\Phoenix\phoenix-web.js
 wwwroot\webfonts\fa-brands-400.ttf

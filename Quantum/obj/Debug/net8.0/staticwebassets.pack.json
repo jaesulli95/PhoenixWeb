@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Phoenix\\phoenix-web.js"
     },
     {
+      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\Phoenix\\phoenix.css",
+      "PackagePath": "staticwebassets\\Phoenix\\phoenix.css"
+    },
+    {
       "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\css\\app.min.css",
       "PackagePath": "staticwebassets\\css\\app.min.css"
     },
@@ -69,12 +73,16 @@
       "PackagePath": "staticwebassets\\fonts\\fa-v4compatibility.woff2"
     },
     {
-      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\img\\cover.jpg",
-      "PackagePath": "staticwebassets\\img\\cover.jpg"
+      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\img\\WarriorBackground.png",
+      "PackagePath": "staticwebassets\\img\\WarriorBackground.png"
     },
     {
-      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\img\\cover_2.jpg",
-      "PackagePath": "staticwebassets\\img\\cover_2.jpg"
+      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\img\\WarriorBackground2.png",
+      "PackagePath": "staticwebassets\\img\\WarriorBackground2.png"
+    },
+    {
+      "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\img\\cover.jpg",
+      "PackagePath": "staticwebassets\\img\\cover.jpg"
     },
     {
       "Id": "F:\\PhoenixWeb\\Quantum\\wwwroot\\img\\dashboard\\product-1.jpeg",

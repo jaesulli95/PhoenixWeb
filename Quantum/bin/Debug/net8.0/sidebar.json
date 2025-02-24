@@ -3,41 +3,34 @@
 		{
 			"text": "PHOENIX-WEB",
 			"is_header": true,
-			"display":  true
+			"display": true
 		},
 		{
 			"controller": "Home",
 			"action": "Index",
 			"icon": "fa-home",
-			"text": "HOME",
+			"text": "Home",
 			"display": true
 		},
 		{
 			"controller": "Projects",
 			"action": "Index",
 			"icon": "fa-folder",
-			"text": "PROJECTS",
-			"display": true
-		},
-		{
-			"controller": "Chores",
-			"action": "Index",
-			"icon": "fa-check",
-			"text": "CHORES",
-			"display": true
-		},
-		{
-			"controller": "Groceries",
-			"action": "Index",
-			"icon": "fa-coffee",
-			"text": "GROCERIES",
+			"text": "Projects",
 			"display": true
 		},
 		{
 			"controller": "Books",
 			"action": "Index",
 			"icon": "fa-book",
-			"text": "READ/TBR",
+			"text": "Books",
+			"display": true
+		},
+		{
+			"controller": "",
+			"action": "",
+			"icon": "fa-list",
+			"text": "Journal Tracker",
 			"display": true
 		}
 	]
