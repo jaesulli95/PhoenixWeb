@@ -31,7 +31,7 @@
 								<a asp-controller="@menu["controller"]" asp-action="@menu["action"]" asp-area="@menu["area"]" class="menu-link">
 									<span class="menu-icon">
 										@if (menu["icon"] != null) {
-											<iconify-icon icon="@menu["icon"]"></iconify-icon>
+											<i class="bi @menu["icon"]"></i>
 										}
 										@if (menu["label"] != null) {
 											<span class="menu-icon-label">@menu["label"]</span>

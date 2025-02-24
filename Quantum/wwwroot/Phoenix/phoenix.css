@@ -1,7 +1,4 @@
-﻿body {
-}
-
-:root {
+﻿:root {
     --bs-body-bg-gradient: none;
     --bs-body-bg-cover: url("../img/WarriorBackground2.png");
 }

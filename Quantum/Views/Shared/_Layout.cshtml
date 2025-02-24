@@ -29,10 +29,6 @@
 			<partial name="_Sidebar" />
 		}
 
-		@if (ViewData["AppTopNav"] != null) {
-			<partial name="_TopNav" />
-		}
-
 		@if (ViewData["AppContentNone"] == null) {
 			<div id="content" class="app-content @ViewData["AppContentClass"]">
 				@RenderBody()
@@ -52,7 +48,7 @@
 	<!-- END #app -->
 
 	<!-- ================== BEGIN core-js ================== -->
-	<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+	<script src="~/js/iconify-icon.min.js"></script>
 	<script src="~/js/vendor.min.js"></script>
 	<script src="~/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->

@@ -8,29 +8,43 @@
 		{
 			"controller": "Home",
 			"action": "Index",
-			"icon": "fa-home",
+			"icon": "bi-house",
 			"text": "Home",
 			"display": true
 		},
 		{
 			"controller": "Projects",
 			"action": "Index",
-			"icon": "fa-folder",
+			"icon": "bi-folder2-open",
 			"text": "Projects",
 			"display": true
 		},
 		{
 			"controller": "Books",
 			"action": "Index",
-			"icon": "fa-book",
+			"icon": "bi-book",
 			"text": "Books",
 			"display": true
 		},
 		{
 			"controller": "",
 			"action": "",
-			"icon": "fa-list",
+			"icon": "bi-journal",
 			"text": "Journal Tracker",
+			"display": true
+		},
+		{
+			"controller": "",
+			"action": "",
+			"icon": "bi-cash-coin",
+			"text": "Bills",
+			"display": true
+		},
+		{
+			"controller": "",
+			"action": "",
+			"icon": "bi-card-list",
+			"text": "Expenses",
 			"display": true
 		}
 	]
