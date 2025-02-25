@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "F:\\PhoenixWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\home\\smalldisplayitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\home\\smalldisplayitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\journal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\journal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\settings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\settings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\sidebar.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\sidebar.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\controllers\\journalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\controllers\\journalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\views\\shared\\_scrolltopbtn.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\views\\shared\\_scrolltopbtn.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|f:\\phoenixweb\\quantum\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05EA29EA-F3BF-4631-8EA5-0405146AB401}|Quantum\\PhoenixWeb.csproj|solutionrelative:quantum\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SmallDisplayItem.cshtml",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Home\\SmallDisplayItem.cshtml",
-              "RelativeDocumentMoniker": "Quantum\\Views\\Home\\SmallDisplayItem.cshtml",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Home\\SmallDisplayItem.cshtml",
-              "RelativeToolTip": "Quantum\\Views\\Home\\SmallDisplayItem.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T03:48:01.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Quantum\\Controllers\\HomeController.cs",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Quantum\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T03:47:48.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Settings\\Index.cshtml",
-              "RelativeDocumentMoniker": "Quantum\\Views\\Settings\\Index.cshtml",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Settings\\Index.cshtml",
-              "RelativeToolTip": "Quantum\\Views\\Settings\\Index.cshtml",
-              "ViewState": "AgIAANUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Projects\\Index.cshtml",
+              "RelativeDocumentMoniker": "Quantum\\Views\\Projects\\Index.cshtml",
+              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Projects\\Index.cshtml",
+              "RelativeToolTip": "Quantum\\Views\\Projects\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T03:47:17.186Z",
+              "WhenOpened": "2025-02-25T05:18:50.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Footer.cshtml",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_Footer.cshtml",
-              "RelativeDocumentMoniker": "Quantum\\Views\\Shared\\_Footer.cshtml",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_Footer.cshtml",
-              "RelativeToolTip": "Quantum\\Views\\Shared\\_Footer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Journal\\Index.cshtml",
+              "RelativeDocumentMoniker": "Quantum\\Views\\Journal\\Index.cshtml",
+              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Journal\\Index.cshtml",
+              "RelativeToolTip": "Quantum\\Views\\Journal\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T03:38:05.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ScrollTopBtn.cshtml",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_ScrollTopBtn.cshtml",
-              "RelativeDocumentMoniker": "Quantum\\Views\\Shared\\_ScrollTopBtn.cshtml",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_ScrollTopBtn.cshtml",
-              "RelativeToolTip": "Quantum\\Views\\Shared\\_ScrollTopBtn.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T03:37:32.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Header.cshtml",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_Header.cshtml",
-              "RelativeDocumentMoniker": "Quantum\\Views\\Shared\\_Header.cshtml",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_Header.cshtml",
-              "RelativeToolTip": "Quantum\\Views\\Shared\\_Header.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-24T21:52:25.206Z",
+              "WhenOpened": "2025-02-25T05:18:47.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Quantum\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Quantum\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADkAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-24T21:52:24.341Z",
+              "Title": "JournalController.cs",
+              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Controllers\\JournalController.cs",
+              "RelativeDocumentMoniker": "Quantum\\Controllers\\JournalController.cs",
+              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Controllers\\JournalController.cs",
+              "RelativeToolTip": "Quantum\\Controllers\\JournalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T05:18:11.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sidebar.json",
+              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\sidebar.json",
+              "RelativeDocumentMoniker": "Quantum\\sidebar.json",
+              "ToolTip": "F:\\PhoenixWeb\\Quantum\\sidebar.json",
+              "RelativeToolTip": "Quantum\\sidebar.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-25T05:17:19.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "F:\\PhoenixWeb\\Quantum\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Quantum\\Models\\Book.cs",
+              "ToolTip": "F:\\PhoenixWeb\\Quantum\\Models\\Book.cs",
+              "RelativeToolTip": "Quantum\\Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:47:15.033Z",
               "EditorCaption": ""
             }
           ]

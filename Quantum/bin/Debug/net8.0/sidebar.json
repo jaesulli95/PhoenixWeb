@@ -27,8 +27,8 @@
 			"display": true
 		},
 		{
-			"controller": "",
-			"action": "",
+			"controller": "Journal",
+			"action": "Index",
 			"icon": "bi-journal",
 			"text": "Journal Tracker",
 			"display": true
