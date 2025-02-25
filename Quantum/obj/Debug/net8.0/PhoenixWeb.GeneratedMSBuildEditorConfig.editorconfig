@@ -17,103 +17,85 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PhoenixWeb
 build_property.RootNamespace = PhoenixWeb
-build_property.ProjectDir = D:\PhoenixWeb\Quantum\
+build_property.ProjectDir = F:\PhoenixWeb\Quantum\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\PhoenixWeb\Quantum
+build_property.MSBuildProjectDirectory = F:\PhoenixWeb\Quantum
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[D:/PhoenixWeb/Quantum/Views/Books/Edit.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Books/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Books/Index.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Books/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Chores/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hvcmVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/PhoenixWeb/Quantum/Views/Groceries/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvY2VyaWVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/PhoenixWeb/Quantum/Views/Home/Index.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Home/SmallDisplayItem.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Home/SmallDisplayItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTbWFsbERpc3BsYXlJdGVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Pages/ErrorPage.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Pages/ErrorPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRXJyb3JQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Projects/Edit.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Projects/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Projects/Index.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Projects/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Settings/Index.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Settings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/Error.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_Footer.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_Header.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_Loader.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2FkZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/PhoenixWeb/Quantum/Views/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/PhoenixWeb/Quantum/Views/Shared/_ScrollTopBtn.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_ScrollTopBtn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TY3JvbGxUb3BCdG4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_Sidebar.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_Sidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_ThemePanel.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_ThemePanel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9UaGVtZVBhbmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_TopNav.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ub3BOYXYuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/PhoenixWeb/Quantum/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/_ViewImports.cshtml]
+[F:/PhoenixWeb/Quantum/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/_ViewStart.cshtml]
+[F:/PhoenixWeb/Quantum/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PhoenixWeb/Quantum/Views/Shared/_Layout.cshtml]
+[F:/PhoenixWeb/Quantum/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qehjhp5gin
