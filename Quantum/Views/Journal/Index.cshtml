@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
 	ViewData["Title"] = "Journal Entries";
 }
@@ -13,51 +11,40 @@
 		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
 		   data-bs-toggle="modal" data-bs-target="#ProjectModal">
 			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
-			ADD ENTRY
+			Add Entry
 		</a>
 	</div>
 </div>
 
-<div class="card">
-	<div class="tab-content">
-		<div class="input-group mb-4">
-			<div class="flex-fill position-relative z-1">
-				<div class="input-group">
-					<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0">
-						<i class="fa fa-search opacity-5"></i>
+<div class="row g-2">
+	<div class="col-xl-6">
+		<div class="col-xl-6">
+			<div class="input-group mb-4">
+				<div class="flex-fill position-relative z-1">
+					<div class="input-group input-daterange" id="datepicker">
+						<span class="input-group-text">Start</span>
+						<input type="text" class="form-control" name="start" placeholder="start date" />
+						<span class="input-group-text">End</span>
+						<input type="text" class="form-control" name="end" placeholder="end date" />
 					</div>
-					<input id="ProjectSearch" type="text" class="form-control ps-30px" placeholder="Search Entries">
 				</div>
 			</div>
 		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">DateTime</th>
+				</tr>
+			</thead>
+			<tbody>
 
-		<div class="tab-pane fade show active" id="allTab">
-			<!--Filtiered by All Tab-->
-			<!-- BEGIN table -->
-			<div class="table-responsive">
-				<table id="T_Journal" class="table table-sm table-hover text-nowrap small mb-4">
-					<!--text-nowrap-->
-					<thead class="table-dark">
-						<tr>
-							<th>NAME</th>
-							<th>DESCRIPTION</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th>DATE CREATED</th>
-							<th></th>
-							<!--Make sure the number of Table Columns match up with the Data Points for each item-->
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
-			</div>
-		</div>
+			</tbody>
+		</table>
 	</div>
+	<div class="col-xl-4">
+		
+	</div>
+
 </div>
