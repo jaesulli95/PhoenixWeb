@@ -1,4 +1,3 @@
-.vs\
 .vs/
-Quantum\bin
-Quantum\obj
+Quantum/bin
+Quantum/obj
