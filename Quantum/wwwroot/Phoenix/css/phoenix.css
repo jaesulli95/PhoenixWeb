@@ -2,3 +2,9 @@
     --bs-body-bg-gradient: none;
     --bs-body-bg-cover: url("../img/WarriorBackground2.png");
 }
+
+tr {
+    color: lightgreen;
+}
+tr:hover td {
+}

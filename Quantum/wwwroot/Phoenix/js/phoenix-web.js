@@ -15,9 +15,6 @@ $('tr.project-task-row').on('click', function (e) {
 
 });
 
+$('tr').on('click', function (e) {
 
-//Entry Code
-
-$('#datepicker').datepicker({
-    autoclose: true
-})
+});
