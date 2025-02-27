@@ -6,6 +6,9 @@
 			"display": true
 		},
 		{
+			"is_divider": true
+		},
+		{
 			"controller": "Home",
 			"action": "Index",
 			"icon": "bi-house",
@@ -20,17 +23,27 @@
 			"display": true
 		},
 		{
-			"controller": "Books",
-			"action": "Index",
-			"icon": "bi-book",
-			"text": "Books",
-			"display": true
-		},
-		{
 			"controller": "Journal",
 			"action": "Index",
 			"icon": "bi-journal",
 			"text": "Journal Tracker",
+			"display": true
+		},
+		{
+			"text": "BOOKS",
+			"is_header": true,
+			"display": true
+		},
+		{
+			"controller": "Books",
+			"action": "Index",
+			"icon": "bi-book",
+			"text": "Library",
+			"display": true
+		},
+		{
+			"text": "EXPENSES",
+			"is_header": true,
 			"display": true
 		},
 		{

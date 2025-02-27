@@ -6,7 +6,3 @@
         });
     });
 });
-
-$(document).ready(function () {
-    $(document).on("click", ".bookrow", PopulateEditModal);
-});

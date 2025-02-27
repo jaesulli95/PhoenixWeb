@@ -14,7 +14,6 @@
         public string? Food { get; set; }
         public int ProteinIntake { get; set; }
         public int WaterIntake { get; set; }
-        public int AppliedBackCream { get; set; }
         public bool NoReddit { get; set; }
     }
 }

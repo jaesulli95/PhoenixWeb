@@ -95,7 +95,7 @@
 					<tbody>
 					@foreach (var b in (List<Book>)ViewBag.Books)
 						{
-							<tr class="bookrow" data-target-bookid=@b.id onclick="PopulateEditModal(this)">
+							<tr data-target-bookid=@b.id onclick="PopulateEditModal(this)">
 								<td class="align-middle" data-bookname=@b.Name>
 									<a asp-controller="Books" asp-action="Edit" asp-route-BookId=@b.id class="text-body text-opacity-75 text-decoration-none">
 										@b.Name

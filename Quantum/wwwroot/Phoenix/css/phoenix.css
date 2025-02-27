@@ -27,3 +27,11 @@ textarea {
 .phoenix-entry {
     background-color: rgba(0.0, 0.0, 0.0, .75);
 }
+
+.vh90 {
+    min-height:90vh;
+}
+
+.w100 {
+    width: 100%;
+}
