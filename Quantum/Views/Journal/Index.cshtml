@@ -2,6 +2,8 @@
 @{
 	ViewData["Title"] = "Journal Entries";
 }
+
+
 <div class="d-flex align-items-center mb-3">
 	<div>
 		<h1 class="page-header mb-0">Journal Entries</h1>
@@ -9,16 +11,18 @@
 
 	<div class="ms-auto">
 		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
-		   data-bs-toggle="modal" data-bs-target="#ProjectModal">
+		   data-bs-toggle="modal" data-bs-target="#JournalEntryModal">
 			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
 			Add Entry
 		</a>
 	</div>
 </div>
 
+<partial name="JourneyEntryModal"/>
+
 <div class="row g-2">
 	<div class="col-xl-6">
-		<table class="table table-bordered">
+		<table class="table table-bordered table-dark">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -41,19 +45,16 @@
 					<td>2005</td>
 				</tr>
 			</tbody>
-
-			<tr class="entry-row">
-				<td>1</td>
-				<td>02/25/2025</td>
-				<td>Yes</td>
-				<td>Yes</td>
-				<td>120</td>
-				<td>88</td>
-				<td>2005</td>
-			</tr>
 		</table>
 	</div>
+	<div class="col-xl-2">
+
+	</div>
 	<div class="col-xl-4">
-		
+		<div id="JournalData" class="card">
+			<div class="card-header">JOURNAL ENTRY DATA </div>
+			<div class="card-body">
+			</div>
+		</div>
 	</div>
 </div>

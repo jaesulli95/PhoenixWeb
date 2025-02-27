@@ -7,4 +7,5 @@ tr {
     color: lightgreen;
 }
 tr:hover td {
+    color: turquoise;
 }
