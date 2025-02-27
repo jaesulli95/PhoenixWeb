@@ -22,7 +22,7 @@
 
 <div class="row g-2">
 	<div class="col-xl-6">
-		<table class="table table-bordered table-dark">
+		<table class="table table-bordered phoenix-entry">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -43,6 +43,11 @@
 					<td>120</td>
 					<td>88</td>
 					<td>2005</td>
+					<td hidden>156</td> <!--Weight-->
+					<td hidden>Chicken Breasts</td> <!--Food-->
+					<td hidden>Yes</td> <!--No Mochas-->
+					<td hidden>No</td> <!--No Erotica-->
+					<td hidden>Yes</td> <!--No Reddit-->
 				</tr>
 			</tbody>
 		</table>
@@ -51,9 +56,95 @@
 
 	</div>
 	<div class="col-xl-4">
-		<div id="JournalData" class="card">
+		<div id="JournalData" class="card" style="visibility:hidden">
 			<div class="card-header">JOURNAL ENTRY DATA </div>
-			<div class="card-body">
+			<div class="card-body phoenix-entry">
+				<div class="form-group row mb-3">
+					<h1 class="col-form-label-lg phoenix-section-header">Daily Stats</h1>
+				</div>
+				<div class="form-group row mb-3">
+					<label id="JournalEntryDate" class="form-label col-sm-4 col-form-label"></label>
+				</div>
+				<!--Calorie Intake-->
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Calories</label>
+					<div class="col-sm-6">
+						<input type="number" id="Calories" class="form-control" placeholder="(Calories)" disabled/>
+					</div>
+				</div>
+
+				<!--Protein Intake-->
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Protein Intake</label>
+					<div class="col-sm-6">
+						<input type="number" id="Protein" class="form-control" placeholder="(In Grams)" disabled />
+					</div>
+				</div>
+
+				<!--Water Intake-->
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Water Intake</label>
+					<div class="col-sm-6">
+						<input type="number" id="Water" class="form-control" placeholder="(Fluid Ounces)" disabled />
+					</div>
+				</div>
+
+				<!--Weight-->
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Weight</label>
+					<div class="col-sm-6">
+						<input type="number" id="Weight" class="form-control" placeholder="(lbs)" disabled/>
+					</div>
+				</div>
+
+
+				<div class="form-group row mb-3">
+					<h1 class="col-form-label-lg phoenix-section-header">Food</h1>
+				</div>
+
+
+				<div class="form-group row mb-3">
+					<div class="col-sm-12">
+						<textarea class="form-control" id="Food" rows="5" disabled></textarea>
+					</div>
+				</div>
+
+
+				<!--Checks for if I completed something that day-->
+				<div class="form-group row mb-3">
+					<h1 class="col-form-label-lg phoenix-section-header">Checks</h1>
+				</div>
+
+				<!--Gym-->
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" id="GymExercise" type="checkbox" disabled/>
+					<label class="form-check-label">Gym/Exercise</label>
+				</div>
+
+				<!--Cooked Food-->
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" id="CookedFood" type="checkbox" disabled/>
+					<label class="form-check-label">Cooked Food</label>
+				</div>
+
+				<!--No Mochas-->
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" id="NoMochas" type="checkbox" value="" disabled/>
+					<label class="form-check-label">No Mochas</label>
+				</div>
+
+
+				<!--No Erotica-->
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" id="NoErotica" type="checkbox" disabled/>
+					<label class="form-check-label">No Erotica</label>
+				</div>
+
+				<!--No Reddit-->
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" id="NoReddit" type="checkbox" disabled/>
+					<label class="form-check-label">No Reddit</label>
+				</div>
 			</div>
 		</div>
 	</div>

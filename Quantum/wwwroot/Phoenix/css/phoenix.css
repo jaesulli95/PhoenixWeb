@@ -9,3 +9,21 @@ tr {
 tr:hover td {
     color: turquoise;
 }
+
+.phoenix-section-header {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: medium;
+}
+
+textarea {
+    resize: none;
+}
+
+.card .phoenix-entry {
+    background-color: rgba(0.0, 0.0, 0.0, .75);
+}
+
+.phoenix-entry {
+    background-color: rgba(0.0, 0.0, 0.0, .75);
+}
