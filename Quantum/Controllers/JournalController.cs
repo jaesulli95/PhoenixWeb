@@ -36,5 +36,27 @@ namespace PhoenixWeb.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> CreateEntry([Bind()] JournalEntry journalEntry)
+        {
+
+            try
+            {
+                var Client = new HttpClient();
+                HttpResponseMessage response = await Client.PostAsJsonAsync($"{this.ApiBaseUrl}/Entries/Create", journalEntry);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    
+                    //return RedirectToAction(nameof(this.Index));
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Ok();
+            //return RedirectToAction(nameof(this.Index));
+        }
     }
 }
