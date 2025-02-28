@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
 	ViewData["Title"] = "Journal Entries";
 }
 
@@ -35,20 +34,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="entry-row">
-					<td>1</td>
-					<td>02/25/2025</td>
-					<td>Yes</td>
-					<td>Yes</td>
-					<td>120</td>
-					<td>88</td>
-					<td>2005</td>
-					<td hidden>156</td> <!--Weight-->
-					<td hidden>Chicken Breasts</td> <!--Food-->
-					<td hidden>Yes</td> <!--No Mochas-->
-					<td hidden>No</td> <!--No Erotica-->
-					<td hidden>Yes</td> <!--No Reddit-->
-				</tr>
+				@{int i = 0;}
+				@foreach(var je in (List<JournalEntry>)ViewBag.Entries)
+				{
+					i++;
+					<tr class="entry-row">
+						<td>@i</td>
+						<td>@je.DateTime</td>
+						<td>@je.Cooked</td>
+						<td>@je.Gym</td>
+						<td>@je.ProteinIntake</td>
+						<td>@je.WaterIntake</td>
+						<td>@je.Calories</td>
+						<td hidden>@je.Weight</td>
+						<td hidden>@je.Food</td>
+						<td hidden>@je.NoMochas</td>
+						<td hidden>@je.NoEroticaBeforeBed</td>
+						<td hidden>@je.NoReddit</td>
+					</tr>
+				}
 			</tbody>
 		</table>
 	</div>

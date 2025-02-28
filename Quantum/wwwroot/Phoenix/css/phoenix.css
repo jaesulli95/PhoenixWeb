@@ -6,7 +6,7 @@
 tr {
     color: lightgreen;
 }
-tr:hover td {
+tr.entry-row:hover td {
     color: turquoise;
 }
 
