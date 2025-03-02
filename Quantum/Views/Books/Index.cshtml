@@ -80,7 +80,7 @@
 			<!--Filtiered by All Tab-->
 			<!-- BEGIN table -->
 			<div class="table-responsive">
-				<table id="T_Book" class="table table-sm table-hover text-nowrap small mb-4">
+				<table id="T_Book" class="table table-sm table-hover text-nowrap small mb-4 table-bordered phoenix-entry">
 					<!--text-nowrap-->
 					<thead class="table-dark">
 						<tr>
@@ -94,7 +94,7 @@
 					<tbody>
 					@foreach (var b in (List<Book>)ViewBag.Books)
 						{
-							<tr data-target-bookid=@b.id onclick="PopulateEditModal(this)">
+							<tr class="bookrow" data-target-bookid=@b.id>
 								<td class="align-middle" data-bookname=@b.Name>
 									<a asp-controller="Books" asp-action="Edit" asp-route-BookId=@b.id class="text-body text-opacity-75 text-decoration-none">
 										@b.Name

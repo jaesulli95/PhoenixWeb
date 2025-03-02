@@ -13,7 +13,7 @@
 			"action": "Index",
 			"icon": "bi-house",
 			"text": "Home",
-			"display": true
+			"display": false
 		},
 		{
 			"controller": "Projects",
@@ -44,21 +44,21 @@
 		{
 			"text": "EXPENSES",
 			"is_header": true,
-			"display": true
+			"display": false
 		},
 		{
 			"controller": "",
 			"action": "",
 			"icon": "bi-cash-coin",
 			"text": "Bills",
-			"display": true
+			"display": false
 		},
 		{
 			"controller": "",
 			"action": "",
 			"icon": "bi-card-list",
 			"text": "Expenses",
-			"display": true
+			"display": false
 		}
 	]
 }

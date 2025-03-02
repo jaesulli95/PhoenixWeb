@@ -37,7 +37,7 @@ namespace PhoenixWeb.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CreateEntry([Bind()] JournalEntry journalEntry)
+        public async Task<IActionResult> CreateEntry(JournalEntry journalEntry)
         {
 
             try
@@ -47,16 +47,15 @@ namespace PhoenixWeb.Controllers
                 string apiResponse = await response.Content.ReadAsStringAsync();
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    
-                    //return RedirectToAction(nameof(this.Index));
+
+                    return RedirectToAction(nameof(this.Index));
                 }
             }
             catch (Exception ex)
             {
 
             }
-            return Ok();
-            //return RedirectToAction(nameof(this.Index));
+            return new EmptyResult();
         }
     }
 }

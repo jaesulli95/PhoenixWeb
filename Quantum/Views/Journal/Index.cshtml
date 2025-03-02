@@ -22,7 +22,7 @@
 <div class="row g-2">
 	<div class="col-xl-6">
 		<table class="table table-bordered phoenix-entry">
-			<thead>
+			<thead class="table-dark">
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Date</th>
@@ -43,7 +43,7 @@
 						<td>@je.DateTime</td>
 						<td>@je.Cooked</td>
 						<td>@je.Gym</td>
-						<td>@je.ProteinIntake</td>
+						<td>@je.ProteinIntake</td> @*5*@
 						<td>@je.WaterIntake</td>
 						<td>@je.Calories</td>
 						<td hidden>@je.Weight</td>
@@ -67,13 +67,13 @@
 					<h1 class="col-form-label-lg phoenix-section-header">Daily Stats</h1>
 				</div>
 				<div class="form-group row mb-3">
-					<label id="JournalEntryDate" class="form-label col-sm-4 col-form-label"></label>
+					<label id="dvJournalEntryDate" class="form-label col-sm-4 col-form-label"></label>
 				</div>
 				<!--Calorie Intake-->
 				<div class="form-group row mb-3">
 					<label class="form-label col-sm-4 col-form-label">Calories</label>
 					<div class="col-sm-6">
-						<input type="number" id="Calories" class="form-control" placeholder="(Calories)" disabled/>
+						<input type="number" id="dvCalories" class="form-control" placeholder="(Calories)" disabled/>
 					</div>
 				</div>
 
@@ -81,7 +81,7 @@
 				<div class="form-group row mb-3">
 					<label class="form-label col-sm-4 col-form-label">Protein Intake</label>
 					<div class="col-sm-6">
-						<input type="number" id="Protein" class="form-control" placeholder="(In Grams)" disabled />
+						<input type="number" id="dvProtein" class="form-control" placeholder="(In Grams)" disabled />
 					</div>
 				</div>
 
@@ -89,7 +89,7 @@
 				<div class="form-group row mb-3">
 					<label class="form-label col-sm-4 col-form-label">Water Intake</label>
 					<div class="col-sm-6">
-						<input type="number" id="Water" class="form-control" placeholder="(Fluid Ounces)" disabled />
+						<input type="number" id="dvWater" class="form-control" placeholder="(Fluid Ounces)" disabled />
 					</div>
 				</div>
 
@@ -97,7 +97,7 @@
 				<div class="form-group row mb-3">
 					<label class="form-label col-sm-4 col-form-label">Weight</label>
 					<div class="col-sm-6">
-						<input type="number" id="Weight" class="form-control" placeholder="(lbs)" disabled/>
+						<input type="number" id="dvWeight" class="form-control" placeholder="(lbs)" disabled/>
 					</div>
 				</div>
 
@@ -109,7 +109,7 @@
 
 				<div class="form-group row mb-3">
 					<div class="col-sm-12">
-						<textarea class="form-control" id="Food" rows="5" disabled></textarea>
+						<textarea class="form-control" id="dvFood" rows="5" disabled></textarea>
 					</div>
 				</div>
 
@@ -121,32 +121,32 @@
 
 				<!--Gym-->
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" id="GymExercise" type="checkbox" disabled/>
+					<input class="form-check-input" id="dvGymExercise" type="checkbox" disabled/>
 					<label class="form-check-label">Gym/Exercise</label>
 				</div>
 
 				<!--Cooked Food-->
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" id="CookedFood" type="checkbox" disabled/>
+					<input class="form-check-input" id="dvCookedFood" type="checkbox" disabled/>
 					<label class="form-check-label">Cooked Food</label>
 				</div>
 
 				<!--No Mochas-->
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" id="NoMochas" type="checkbox" value="" disabled/>
+					<input class="form-check-input" id="dvNoMochas" type="checkbox" value="" disabled/>
 					<label class="form-check-label">No Mochas</label>
 				</div>
 
 
 				<!--No Erotica-->
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" id="NoErotica" type="checkbox" disabled/>
+					<input class="form-check-input" id="dvNoErotica" type="checkbox" disabled/>
 					<label class="form-check-label">No Erotica</label>
 				</div>
 
 				<!--No Reddit-->
 				<div class="form-check form-check-inline">
-					<input class="form-check-input" id="NoReddit" type="checkbox" disabled/>
+					<input class="form-check-input" id="dvNoReddit" type="checkbox" disabled/>
 					<label class="form-check-label">No Reddit</label>
 				</div>
 			</div>

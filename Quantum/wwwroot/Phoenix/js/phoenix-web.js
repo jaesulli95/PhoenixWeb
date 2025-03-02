@@ -17,10 +17,10 @@ $('tr.project-task-row').on('click', function (e) {
 
 
 function SetChecked(ElementIdName, status) {
-    if (status == "Yes") {
+    if (status == "True") {
         document.getElementById(ElementIdName).checked = true;
         return;
-    } else if (status == "No") {
+    } else if (status == "False") {
         document.getElementById(ElementIdName).checked = false;
     }
 }
@@ -40,15 +40,15 @@ $('tr.entry-row').on('click', function (e) {
     var $weight = $(this).find("td:nth-child(8)").text();
 
 
-    document.getElementById("Water").value = $water;
-    document.getElementById("Protein").value = $protein;
-    document.getElementById("Calories").value = $calories;
-    document.getElementById("Weight").value = $weight;
-    document.getElementById("JournalEntryDate").innerHTML = $date;
+    document.getElementById("dvWater").value = $water;
+    document.getElementById("dvProtein").value = $protein;
+    document.getElementById("dvCalories").value = $calories;
+    document.getElementById("dvWeight").value = $weight;
+    document.getElementById("dvJournalEntryDate").innerHTML = $date;
 
     //FOOD
     var $food = $(this).find("td:nth-child(9)").text();
-    document.getElementById("Food").value = $food;
+    document.getElementById("dvFood").value = $food;
 
     //Checked
     var $gym = $(this).find("td:nth-child(4)").text();
@@ -57,9 +57,9 @@ $('tr.entry-row').on('click', function (e) {
     var $erotica = $(this).find("td:nth-child(11)").text();
     var $reddit = $(this).find("td:nth-child(12)").text();
 
-    SetChecked("GymExercise", $gym);
-    SetChecked("CookedFood", $cooked);
-    SetChecked("NoMochas", $mochas);
-    SetChecked("NoErotica", $erotica);
-    SetChecked("NoReddit", $reddit);
+    SetChecked("dvGymExercise", $gym);
+    SetChecked("dvCookedFood", $cooked);
+    SetChecked("dvNoMochas", $mochas);
+    SetChecked("dvNoErotica", $erotica);
+    SetChecked("dvNoReddit", $reddit);
 });
