@@ -23,6 +23,13 @@
 			"display": true
 		},
 		{
+			"controller": "Items",
+			"action": "Index",
+			"icon": "bi-list",
+			"text": "Groceries",
+			"display": true
+		},
+		{
 			"controller": "Journal",
 			"action": "Index",
 			"icon": "bi-journal",

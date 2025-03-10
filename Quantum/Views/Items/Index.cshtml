@@ -1,5 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+	ViewData["Title"] = "Items";
 }
+@section Styles {
+	<link href="~/lib/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+	<link href="~/lib/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+	<link href="~/lib/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" />
+	<link href="~/Phoenix/css/phoenix-items.css" rel="stylesheet" />
+}
+
+@section Scripts {
+	<script src="~/lib/datatables.net/js/dataTables.min.js"></script>
+	<script src="~/lib/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="~/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="~/lib/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+	<script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="~/lib/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+	<script src="~/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="~/lib/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="~/Phoenix/js/phoenix-items.js"></script>
+}
+
+<div class="d-flex align-items-center mb-3">
+	<div>
+		<h1 class="page-header mb-0">Items</h1>
+	</div>
+
+	<div class="ms-auto">
+		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
+		   data-bs-toggle="modal" data-bs-target="#ItemModal">
+			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
+			ADD ITEM
+		</a>
+	</div>
+</div>
+
+<partial name="Modals/ItemAddModal"/>
+
+<div class="row g-2">
+	<div class="col-xl-8">
+		<table id="dtItems" width="100%" class="table text-nowrap table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>Name</th>
+					<th class="col-sm-1">Quantity</th>
+					<th class="col-sm-1">Price</th>
+					<th>Store</th>
+					<th>Category</th>
+				</tr>
+			</thead>
+			<tbody>
+				@* <tr class="item-row">
+					<td>Cantoloupe</td>
+					<td>2</td>
+					<td>5.00</td>
+					<td>Martins</td>
+					<td>Food</td>
+				</tr> *@
+			</tbody>
+		</table>
+	</div>
+</div>
