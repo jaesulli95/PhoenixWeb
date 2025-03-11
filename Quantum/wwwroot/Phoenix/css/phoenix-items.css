@@ -12,3 +12,7 @@ body .dt-bootstrap5 .dataTable.dtr-inline tr td.dtr-control::before {
 table.table.dataTable > tbody > tr {
     background-color: rgba(0, 0, 0, .75);
 }
+
+.card .item-data {
+    background-color: rgba(0.0, 0.0, 0.0, .75);
+}
