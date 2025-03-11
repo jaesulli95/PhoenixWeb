@@ -5,64 +5,60 @@
 	<div id="JournalData" class="card" style="visibility:visible">
 		<div class="card-header">ITEM DATA </div>
 		<div class="card-body item-data">
-			<div class="form-group row mb-3">
-				<label class="form-label col-sm-4 col-form-label">Name</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" asp-for="Name" />
+			<form asp-controller="Items" asp-action="EditItem" method="post">
+				<input id="itemId" type="hidden" asp-for=Id />
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Name</label>
+					<div class="col-sm-6">
+						<input id="ieName" type="text" class="form-control" asp-for="Name" disabled/>
+					</div>
 				</div>
-			</div>
-
-			<div class="form-group row mb-3">
-				<label class="form-label col-sm-4 col-form-label">Quantity</label>
-				<div class="col-sm-6">
-					<input type="number" class="form-control" asp-for="Quantity" value=1 />
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Quantity</label>
+					<div class="col-sm-6">
+						<input id="ieQuantity" type="number" class="form-control" asp-for="Quantity" value=1 disabled/>
+					</div>
 				</div>
-			</div>
-
-			<div class="form-group row mb-3">
-				<label class="form-label col-sm-4 col-form-label">Price</label>
-				<div class="col-sm-6">
-					<input type="number" class="form-control" asp-for="Price" value=1.00 />
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Price</label>
+					<div class="col-sm-6">
+						<input id="iePrice" type="number" class="form-control" asp-for="Price" value=1.00 disabled/>
+					</div>
 				</div>
-			</div>
-
-			<div class="form-group row mb-3">
-				<label class="form-label col-sm-4 col-form-label">Store</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" asp-for="Store" />
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Store</label>
+					<div class="col-sm-6">
+						<input id="ieStore" type="text" class="form-control" asp-for="Store" disabled />
+					</div>
 				</div>
-			</div>
-
-			<div class="form-group row mb-3">
-				<label class="form-label col-sm-4 col-form-label">Category</label>
-				<div class="col-sm-6">
-					<select class="form-select" asp-for="Category">
-						<option>Food</option>
-						<option>Kitchen</option>
-						<option>Bathroom</option>
-						<option>Misc</option>
-						<option>Living Room</option>
-					</select>
+				<div class="form-group row mb-3">
+					<label class="form-label col-sm-4 col-form-label">Category</label>
+					<div class="col-sm-6">
+						<select id="ieCategory" class="form-select" asp-for="Category" disabled>
+							<option>Food</option>
+							<option>Kitchen</option>
+							<option>Bathroom</option>
+							<option>Misc</option>
+							<option>Living Room</option>
+						</select>
+					</div>
 				</div>
-			</div>
-
-			<div class="form-group row mb-3">
-				<div class="col-sm-12">
-					<textarea asp-for="Notes" class="form-control" rows="5" placeholder="Notes"></textarea>
+				<div class="form-group row mb-3">
+					<div class="col-sm-12">
+						<textarea asp-for="Notes" class="form-control" rows="5" placeholder="Notes"></textarea>
+					</div>
 				</div>
-			</div>
-
-			<br />
-			<br />
-
-			<div class="form-group row mb-3">
-				<div class="col-sm-2">
-					<button id="btnItemEdit" class="btn btn-outline-theme">Edit</button>
+				<br />
+				<br />
+				<div class="form-group row mb-3">
+					<div class="col-sm-2">
+						<button  type="button" id="btnItemEdit" class="btn btn-outline-theme" onclick="EditItemData()">Edit</button>
+					</div>
+					<div class="col-sm-1">
+						<button id="btnItemEditSubmit" type="submit" class="btn btn-outline-theme" style="visibility:hidden">Submit</button>
+					</div>
 				</div>
-				<div class="col-sm-2">
-					<button type="submit" class="btn btn-outline-theme">Submit</button>
-				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>

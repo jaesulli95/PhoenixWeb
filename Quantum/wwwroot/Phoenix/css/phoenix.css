@@ -35,3 +35,7 @@ textarea {
 .w100 {
     width: 100%;
 }
+
+.modal .modal-content {
+    background: rgba(0, 0, 0, .95);
+}

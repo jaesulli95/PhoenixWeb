@@ -57,5 +57,11 @@ namespace PhoenixWeb.Controllers
 
             return RedirectToAction(nameof(this.Index));
         }
+
+        [HttpPost]
+        public IActionResult EditItem()
+        {
+            return RedirectToAction(nameof(this.Index));
+        }
     }
 }
