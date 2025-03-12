@@ -100,7 +100,6 @@ namespace Quantum.Controllers
 
 				//Edit the book Info
 				HttpResponseMessage editResp = await Client.PostAsJsonAsync($"{this.ApiBaseUrl}/Books/Edit", b);
-
 			}
 			catch(Exception e)
 			{

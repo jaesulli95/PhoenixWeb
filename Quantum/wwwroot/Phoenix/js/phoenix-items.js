@@ -7,10 +7,6 @@ $(document).ready(function () {
         responsive: true,
         buttons: [
             { extend: 'csv', className: 'btn btn-sm' },
-            {
-                text: 'sum',
-                className: 'btn btn-sm'
-            }
         ],
         select: {
             style: 'multi'
@@ -22,4 +18,8 @@ $(document).ready(function () {
 function EditItemData() {
     var $submitBtn = document.getElementById("btnItemEditSubmit");
     $submitBtn.style.visibility = 'visible';
+    document.getElementById("iePrice").disabled = false;
+    document.getElementById("ieQuantity").disabled = false;
+    document.getElementById("ieStore").disabled = false;
+    document.getElementById("ieNotes").disabled = false;
 }
