@@ -6,6 +6,10 @@
         responsive: true,
         buttons: [
             { extend: 'csv', className: 'btn btn-sm' },
-        ]
+        ],
+        columnDefs: [{
+            orderable: false,
+            targets: [3] // Disable sorting for columns 0, 2 and 3
+        }]
     });
 });
