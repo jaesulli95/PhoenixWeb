@@ -1,0 +1,51 @@
+﻿<div class="modal fade" id="ProjectModal">
+	<div class="modal-dialog modal-lg"> <!--modal-lg-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add Project</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form asp-controller="Projects" asp-action="Create" method="post">
+					<div class="form-group mb-3">
+						<label class="form-label">Name</label>
+						<input type="text" class="form-control" name="Name" id="ProjectName"/>
+						<br />
+						<label class="form-label">Git Link:</label>
+						<input type="text" class="form-control" name="VCLink" id="GitLink" />
+						<br/>
+						<div class="mb-3">
+							<label class="form-label">Description <span class="text-danger">*</span></label>
+							<div class="form-control p-0">
+								<textarea name="Description" class="summernote form-control" rows="12"></textarea>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Category</label>
+							<select class="form-select" name="Category">
+								@{
+									int i = 0;
+								}
+								@foreach (var c in (string[])ViewBag.Categories)
+								{
+										<option value="@i">@c</option>
+									i++;
+								}
+							</select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Status</label>
+							<select class="form-select" name="Status">
+								<option value="0">Not Yet Started</option>
+								<option value="1">In Progress</option>
+								<option value="2">Completed/Milestone</option>
+							</select>
+						</div>
+						<hr/>
+						<button type="submit" class="btn btn-outline-theme">Create</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
