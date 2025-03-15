@@ -63,7 +63,7 @@
 							</td>
 							@{string Desc = "";}
 							@if(@p.Description?.Length > 60) {
-								Desc = p.Description.Substring(0, 60) + "...";
+								Desc = p?.Description.Substring(0, 60) + "...";
 							}else {
 								Desc = p.Description;
 							}

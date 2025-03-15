@@ -1,45 +1,70 @@
 ﻿<div class="modal fade" id="ProjectTaskModal">
 	<div class="modal-dialog">
-		<form>
 			@* <input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@Html.DisplayFor(project => project.project.Id) /> *@
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Add Task</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-				</div>
-				<div class="modal-body">
-					<div class="mb-3">
-						<label class="form-label">Name</label>
-						<input type="text" class="form-control" placeholder="e.g Feature enhancement" name="Name">
-					</div>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add Task/Note</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
 
-					<div class="mb-3">
-						<label class="form-label">Type</label>
-						<select class="form-select" name="Type">
-							<option value="0">Development</option>
-							<option value="1">Story</option>
-							<option value="2">Game Design</option>
-							<option value="3">Graphics</option>
-						</select>
-					</div>
+			<ul class="nav nav-tabs">
+				<li class="nav-item"><a href="#TasksTab" class="nav-link active px-2 py-2" data-bs-toggle="tab">Task</a></li>
+				<li class="nav-item"><a href="#NotesTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Note</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane show active" id="TasksTab">
+					<form>
+						<div class="modal-body">
+							<div class="mb-3">
+								<label class="form-label">Name</label>
+								<input type="text" class="form-control" placeholder="e.g Feature enhancement" name="Name">
+							</div>
 
-					<div class="mb-3">
-						<label class="form-label">Task Type</label>
-						<select class="form-select" name="TaskType">
-							<option value="0">Feature</option>
-							<option value="1">Enhancement</option>
-							<option value="2">Bug</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Description</label>
-						<textarea class="form-control" rows="5" name="Description"placeholder="Enter Task Description"></textarea>
-					</div>
+							<div class="mb-3">
+								<label class="form-label">Type</label>
+								<select class="form-select" name="Type">
+									<option value="0">Development</option>
+									<option value="1">Story</option>
+									<option value="2">Game Design</option>
+									<option value="3">Graphics</option>
+								</select>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Task Type</label>
+								<select class="form-select" name="TaskType">
+									<option value="0">Feature</option>
+									<option value="1">Enhancement</option>
+									<option value="2">Bug</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Description</label>
+								<textarea class="form-control" rows="5" name="Description" placeholder="Enter Task Description"></textarea>
+							</div>
+						</div>
+						<hr/>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-theme w-100px">Create Task</button>
+						</div>
+					</form>
 				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-theme w-100px">CREATE</button>
+				<div class="tab-pane" id="NotesTab">
+					<form>
+						<div class="modal-body">
+							<div class="form-group row mb-3">
+								<div class="col-sm-12">
+									<textarea class="form-control" rows="5" placeholder="Enter Note"></textarea>
+								</div>
+							</div>
+						</div>
+						<hr/>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-theme w-100px">Create Note</button>
+						</div>
+					</form>
 				</div>
 			</div>
-		</form>
+		</div>
 	</div>
 </div>
