@@ -41,38 +41,41 @@ namespace Quantum.Controllers
 		}
 		public async Task<IActionResult> Edit(int ProjectId)
 		{
-
-			Project? project = new Project();
-			ProjectEditData projectEditData = new ProjectEditData();
-			try
-			{
-				var Client = new HttpClient();
-				var Resp = await Client.GetAsync($"{this.ApiBaseUrl}/Projects/{ProjectId}");
-				string ApiResp = await Resp.Content.ReadAsStringAsync();
-				project = JsonConvert.DeserializeObject<Project>(ApiResp);
-
-				if(project != null)
-				{
-					projectEditData.project = project;
-				}
-
-				List<ProjectTask>? ProjectTasks = new List<ProjectTask>();
-				var response = await Client.GetAsync($"{this.ApiBaseUrl}/Projects/Tasks/{ProjectId}");
-				string apiResponse = await response.Content.ReadAsStringAsync();
-				ProjectTasks = JsonConvert.DeserializeObject<List<ProjectTask>>(apiResponse);
-
-				if(ProjectTasks != null)
-				{
-					projectEditData.projectTasks = ProjectTasks;
-				}
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.Message);
-			}
-			ViewData["ProjectEditData"] = projectEditData;
-			return View(projectEditData);
+			return View();
 		}
+		public async Task<IActionResult> ProjectTasks(int ProjectId)
+		{
+            Project? project = new Project();
+            ProjectEditData projectEditData = new ProjectEditData();
+            try
+            {
+                var Client = new HttpClient();
+                var Resp = await Client.GetAsync($"{this.ApiBaseUrl}/Projects/{ProjectId}");
+                string ApiResp = await Resp.Content.ReadAsStringAsync();
+                project = JsonConvert.DeserializeObject<Project>(ApiResp);
+
+                if (project != null)
+                {
+                    projectEditData.project = project;
+                }
+
+                List<ProjectTask>? ProjectTasks = new List<ProjectTask>();
+                var response = await Client.GetAsync($"{this.ApiBaseUrl}/Projects/Tasks/{ProjectId}");
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                ProjectTasks = JsonConvert.DeserializeObject<List<ProjectTask>>(apiResponse);
+
+                if (ProjectTasks != null)
+                {
+                    projectEditData.projectTasks = ProjectTasks;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            ViewData["ProjectEditData"] = projectEditData;
+            return View(projectEditData);
+        }
 		public async Task<IActionResult> EditProject([Bind("Id,Description,VCLink,Status")] Project project)
 		{
 			try

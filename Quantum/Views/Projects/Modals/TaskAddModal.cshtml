@@ -1,7 +1,7 @@
-﻿@* <div class="modal fade" id="AddTaskModal">
+﻿<div class="modal fade" id="ProjectTaskModal">
 	<div class="modal-dialog">
-		<form asp-controller="Projects" asp-action="CreateProjectTask">
-			<input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@Html.DisplayFor(project => project.project.Id) />
+		<form>
+			@* <input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@Html.DisplayFor(project => project.project.Id) /> *@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Add Task</h5>
@@ -12,9 +12,20 @@
 						<label class="form-label">Name</label>
 						<input type="text" class="form-control" placeholder="e.g Feature enhancement" name="Name">
 					</div>
+
 					<div class="mb-3">
-						<label class="form-label">Status</label>
+						<label class="form-label">Type</label>
 						<select class="form-select" name="Type">
+							<option value="0">Development</option>
+							<option value="1">Story</option>
+							<option value="2">Game Design</option>
+							<option value="3">Graphics</option>
+						</select>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Task Type</label>
+						<select class="form-select" name="TaskType">
 							<option value="0">Feature</option>
 							<option value="1">Enhancement</option>
 							<option value="2">Bug</option>
@@ -22,14 +33,13 @@
 					</div>
 					<div class="form-group">
 						<label>Description</label>
-						<textarea class="form-control" rows="10" name="Description"></textarea>
+						<textarea class="form-control" rows="5" name="Description"placeholder="Enter Task Description"></textarea>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-theme w-100px">CREATE</button>
-					<a href="#" class="btn btn-outline-default w-100px" data-bs-dismiss="modal">CANCEL</a>
 				</div>
 			</div>
 		</form>
 	</div>
-</div> *@
+</div>

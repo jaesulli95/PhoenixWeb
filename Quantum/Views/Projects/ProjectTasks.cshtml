@@ -1,7 +1,61 @@
-﻿@section Styles {
+﻿@model Quantum.Models.ProjectEditData
 
+@{
+	ViewData["Title"] = "Project Tasks";
+	ProjectEditData Data = (ProjectEditData)ViewBag.projectEditData;
+}
+@section Styles {
+	<link href="~/Phoenix/css/phoenix-projects.css" rel="stylesheet"/>
 }
 
 @section Scripts {
 
 }
+
+
+<!--Header-->
+<div class="d-flex align-items-center mb-md-3 mb-2">
+	<div class="flex-fill">
+		<h1 class="page-header mb-0 theme-color">
+			@Data?.project?.Name
+		</h1>
+	</div>
+	<div class="ms-auto">
+		<a data-bs-toggle="modal" data-bs-target="#ProjectTaskModal" class="btn btn-theme btn-sm py-2 fs-11px w-120px d-flex align-items-center justify-content-center">
+			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
+			ADD TASK
+		</a>
+	</div>
+</div>
+<partial name="Modals/TaskAddModal"/>
+
+<!-- Project Tasks Content-->
+<div class="card">
+	<ul class="nav nav-tabs nav-tabs-v2 small text-uppercase mb-4 px-2">
+		<li class="nav-item me-4 pt-tab"><a href="#DevelopmentTab" class="nav-link active px-2 py-2" data-bs-toggle="tab">Development</a></li>
+		<li class="nav-item me-4 pt-tab"><a href="#StoryTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Story</a></li>
+		<li class="nav-item me-4 pt-tab"><a href="#GameDesignTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Design</a></li>
+		<li class="nav-item me-4 pt-tab"><a href="#GraphicsTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Graphics</a></li>
+		<li class="nav-item me-4 pt-tab"><a href="#NotesTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Notes</a></li>
+	</ul>
+
+	<!-- Pass in Model Data Here -->
+	<div class="tab-content">
+		<div class="tab-pane fade show active" id="DevelopmentTab">
+			<partial name="Partials/ProjectTasksTab" />
+		</div>
+		<div class="tab-pane fade" id="StoryTab">
+			<partial name="Partials/ProjectTasksTab" />
+		</div>
+		<div class="tab-pane fade" id="GameDesignTab">
+			<partial name="Partials/ProjectTasksTab" />
+		</div>
+		<div class="tab-pane fade" id="GraphicsTab">
+			<partial name="Partials/ProjectTasksTab" />
+		</div>
+
+		<div class="tab-pane fade" id="NotesTab" style="visibility:hidden">
+			<partial name="Partials/ProjectNotes" />
+		</div>
+	</div>
+</div>

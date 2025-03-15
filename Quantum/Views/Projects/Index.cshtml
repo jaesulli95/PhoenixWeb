@@ -34,9 +34,7 @@
 		</a>
 	</div>
 </div>
-
 <partial name="Modals/ProjectAddModal"/>
-
 
 <div class="row">
 	<div class="card col-lg-8">
@@ -59,8 +57,7 @@
 							<td>
 								<div class="d-flex align-items-center">
 									<div class="ms-3">
-										<a asp-controller="Projects" asp-action="Edit" asp-route-ProjectId=@p.Id
-											class="text-body text-opacity-75 text-decoration-none">@p.Name</a>
+										<a class="text-body text-opacity-75 text-decoration-none">@p.Name</a>
 									</div>
 								</div>
 							</td>
@@ -74,7 +71,7 @@
 							<td class="align-middle">@p.CreationTimestamp</td>
 							<td class="align-middle">
 								<div class="col-md-6 col-sm-6 col-xs-6 mb-1 text-truncate">
-									<a asp-controller="Projects" asp-action="Edit" asp-route-ProjectId=@p.Id><i class="far fa-lg fa-fw me-2 fa-edit"></i></a>
+									<a asp-controller="Projects" asp-action="ProjectTasks" asp-route-ProjectId=@p.Id><i class="far fa-lg fa-fw me-2 fa-edit"></i></a>
 								</div>
 							</td>
 						</tr>

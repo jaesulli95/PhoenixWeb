@@ -1,3 +1,30 @@
 ﻿body .dt-bootstrap5 .dataTable.dtr-inline tr td.dtr-control::before {
     content: none !important;
 }
+
+.nav.nav-tabs.nav-tabs-v2 > .nav-item > .nav-link:hover, .nav.nav-tabs.nav-tabs-v2 > .nav-item > .nav-link.active {
+    color: var(--bs-theme);
+    border-bottom-color: var(--bs-theme);
+}
+
+.card .card-header {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--bs-theme);
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.bg-transparent-black-75 {
+    --bs-bg-opacity: 1;
+    background-color: rgba(0,0,0,.75);
+}
+.pt-tab {
+    color: darkred !important;
+    font-size: 1.0rem !important;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.theme-color {
+    color: var(--bs-theme);
+    text-shadow: 2px 2px 2px #000000;
+}
