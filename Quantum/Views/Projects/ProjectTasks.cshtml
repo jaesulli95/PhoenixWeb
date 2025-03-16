@@ -27,7 +27,7 @@
 		</a>
 	</div>
 </div>
-<partial name="Modals/TaskAddModal"/>
+<partial name="Modals/TaskAddModal" model=@Data.project.Id/>
 
 <!-- Project Tasks Content-->
 <div class="card">
@@ -41,19 +41,27 @@
 
 	<!-- Pass in Model Data Here -->
 	<div class="tab-content">
+		<!--Development Tab-->
 		<div class="tab-pane fade show active" id="DevelopmentTab">
-			<partial name="Partials/ProjectTasksTab" />
-		</div>
-		<div class="tab-pane fade" id="StoryTab">
-			<partial name="Partials/ProjectTasksTab" />
-		</div>
-		<div class="tab-pane fade" id="GameDesignTab">
-			<partial name="Partials/ProjectTasksTab" />
-		</div>
-		<div class="tab-pane fade" id="GraphicsTab">
-			<partial name="Partials/ProjectTasksTab" />
+			<partial name="Partials/ProjectTasksTab" model="@Data?.projectTasks?.FindAll(pTask => (pTask.Category == 0) )"/>
 		</div>
 
+		<!--Story Tab-->
+		<div class="tab-pane fade" id="StoryTab">
+			<partial name="Partials/ProjectTasksTab" model="@Data?.projectTasks?.FindAll(pTask => (pTask.Category == 1) )" />
+		</div>
+
+		<!--Design Tab-->
+		<div class="tab-pane fade" id="GameDesignTab">
+			<partial name="Partials/ProjectTasksTab" model="@Data?.projectTasks?.FindAll(pTask => (pTask.Category == 2) )" />
+		</div>
+
+		<!--Graphics Tab-->
+		<div class="tab-pane fade" id="GraphicsTab">
+			<partial name="Partials/ProjectTasksTab" model="@Data?.projectTasks?.FindAll(pTask => (pTask.Category == 3) )" />
+		</div>
+
+		<!--Notes-->
 		<div class="tab-pane fade" id="NotesTab" style="visibility:hidden">
 			<partial name="Partials/ProjectNotes" />
 		</div>

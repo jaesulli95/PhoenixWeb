@@ -154,7 +154,7 @@ namespace Quantum.Controllers
 			}
 			return RedirectToAction(nameof(this.Edit));
 		}
-		public async Task<IActionResult> CreateProjectTask([Bind("ProjectId,Name,Description,Type")] ProjectTask pTask)
+		public async Task<IActionResult> CreateProjectTask([Bind("ProjectId,Name,Description,Type,Category")] ProjectTask pTask)
 		{
 			var Client = new HttpClient();
 			try
@@ -163,7 +163,7 @@ namespace Quantum.Controllers
 				if (Response.IsSuccessStatusCode)
 				{
 					//Do someething when we are OK
-					return RedirectToAction(nameof(this.Index));
+					return RedirectToAction(nameof(this.ProjectTasks), pTask.ProjectId);
 				}
 
 			}

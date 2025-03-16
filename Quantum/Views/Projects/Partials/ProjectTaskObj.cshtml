@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model Quantum.Models.ProjectTask
+
+@section Styles {
+	<link href="~/Phoenix/css/phoenix-projects.css" rel="stylesheet" />
 }
+<div class="card h-100">
+
+	@if(Model.Type == 0) {
+		<div class="card-header with-btn pt-feature">
+			@Model.Name
+			<div class="card-header-btn">
+				<a href="#" data-toggle="card-collapse" class="btn"> + </a>
+			</div>
+		</div>
+	}else if(Model.Type == 1) {
+		<div class="card-header with-btn pt-enhancement">
+			@Model.Name
+			<div class="card-header-btn">
+				<a href="#" data-toggle="card-collapse" class="btn"> + </a>
+			</div>
+		</div>
+	}else if(Model.Type == 2) {
+		<div class="card-header with-btn pt-bug">
+			@Model.Name
+			<div class="card-header-btn">
+				<a href="#" data-toggle="card-collapse" class="btn"> + </a>
+			</div>
+		</div>
+	}
+	<!-- END card-header -->
+	<!-- BEGIN card-body -->
+	<div class="card-body bg-transparent-black-75" style="display:none">
+		<label class="form-label col-12">Date Created: @Model.DateCreated</label>
+		<label class="form-label col-12">Task Description: @Model.Description</label>
+		<br/>
+		<button type="submit" class="btn btn-outline-theme">Start</button>
+	</div>
+</div>
+

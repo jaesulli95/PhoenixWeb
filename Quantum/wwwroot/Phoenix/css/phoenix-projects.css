@@ -16,8 +16,15 @@
 
 .bg-transparent-black-75 {
     --bs-bg-opacity: 1;
-    background-color: rgba(0,0,0,.75);
+    background-color: rgba(0,0,0,.75) !important;
 }
+
+.bg-transparent-black-95 {
+    --bs-bg-opacity: 1;
+    background-color: rgba(0,0,0,.95) !important;
+}
+
+
 .pt-tab {
     color: darkred !important;
     font-size: 1.0rem !important;
@@ -27,4 +34,16 @@
 .theme-color {
     color: var(--bs-theme);
     text-shadow: 2px 2px 2px #000000;
+}
+
+.pt-feature {
+    background-color: darkgreen;
+}
+
+.pt-enhancement {
+    background-color: rebeccapurple;
+}
+
+.pt-bug {
+    background-color: maroon;
 }

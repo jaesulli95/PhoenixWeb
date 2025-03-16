@@ -1,6 +1,7 @@
-﻿<div class="modal fade" id="ProjectTaskModal">
+﻿@model int;
+
+<div class="modal fade" id="ProjectTaskModal">
 	<div class="modal-dialog">
-			@* <input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@Html.DisplayFor(project => project.project.Id) /> *@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Add Task/Note</h5>
@@ -13,7 +14,8 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane show active" id="TasksTab">
-					<form>
+					<form asp-controller="Projects" asp-action="CreateProjectTask">
+						<input type="hidden" data-val-required="The ID field is required." name="ProjectId"  value=@Model />
 						<div class="modal-body">
 							<div class="mb-3">
 								<label class="form-label">Name</label>
@@ -21,8 +23,8 @@
 							</div>
 
 							<div class="mb-3">
-								<label class="form-label">Type</label>
-								<select class="form-select" name="Type">
+								<label class="form-label">Category</label>
+								<select class="form-select" name="Category">
 									<option value="0">Development</option>
 									<option value="1">Story</option>
 									<option value="2">Game Design</option>
@@ -31,8 +33,8 @@
 							</div>
 
 							<div class="mb-3">
-								<label class="form-label">Task Type</label>
-								<select class="form-select" name="TaskType">
+								<label class="form-label">Type</label>
+								<select class="form-select" name="Type">
 									<option value="0">Feature</option>
 									<option value="1">Enhancement</option>
 									<option value="2">Bug</option>
