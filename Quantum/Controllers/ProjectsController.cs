@@ -163,7 +163,7 @@ namespace Quantum.Controllers
 				if (Response.IsSuccessStatusCode)
 				{
 					//Do someething when we are OK
-					return RedirectToAction(nameof(this.ProjectTasks), pTask.ProjectId);
+					return RedirectToAction(nameof(this.Index));
 				}
 
 			}
