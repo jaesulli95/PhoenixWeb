@@ -8,7 +8,9 @@
 			</div>
 			@{
 				foreach(ProjectTask pTask in (List<ProjectTask>)Model) {
-					<partial name="Partials/ProjectTaskObj" model="@pTask" />
+					if(pTask.Status == 0) {
+						<partial name="Partials/ProjectTaskObj" model="@pTask" />
+					}
 				}
 			}
 		</div>
@@ -18,6 +20,16 @@
 			<div class="card-header bg-transparent-black-75">
 				::In-Progress (@Model.Count(x => x.Status == 1))
 			</div>
+			@{
+				foreach (ProjectTask pTask in (List<ProjectTask>)Model)
+				{
+					if (pTask.Status == 1)
+					{
+						<partial name="Partials/ProjectTaskObj" model="@pTask" />
+					}
+				}
+			}
+
 		</div>
 	</div>
 
@@ -26,6 +38,16 @@
 			<div class="card-header bg-transparent-black-75">
 				::Completed (@Model.Count(x => x.Status == 2))
 			</div>
+			@{
+				foreach (ProjectTask pTask in (List<ProjectTask>)Model)
+				{
+					if (pTask.Status == 2)
+					{
+						<partial name="Partials/ProjectTaskObj" model="@pTask" />
+					}
+				}
+			}
+
 		</div>
 	</div>
 </div>

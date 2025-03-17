@@ -173,5 +173,14 @@ namespace Quantum.Controllers
 			}
 			return RedirectToAction(nameof(this.Index));
 		}
+
+		[HttpPost]
+		public async Task<IActionResult> UpdateTaskStatus(int TaskId, int pId, int Status)
+		{
+            var Client = new HttpClient();
+            var Resp = await Client.PostAsync($"{this.ApiBaseUrl}/Projects/Tasks/Update={TaskId}&Status={Status}", null);
+            return RedirectToAction(nameof(this.ProjectTasks), new { ProjectId = pId });
+
+        }
 	}
 }

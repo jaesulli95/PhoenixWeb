@@ -31,9 +31,31 @@
 	<!-- BEGIN card-body -->
 	<div class="card-body bg-transparent-black-75" style="display:none">
 		<label class="form-label col-12">Date Created: @Model.DateCreated</label>
+		@if(Model.Status == 2) {
+			<label class="form-label col-12">Date Completed: @Model.DateCompleted</label>
+		}
 		<label class="form-label col-12">Task Description: @Model.Description</label>
 		<br/>
-		<button type="submit" class="btn btn-outline-theme">Start</button>
+		
+
+		<form asp-controller="Projects" asp-action="UpdateTaskStatus" method="post">
+			<input hidden name="TaskId" value=@Model.Id />
+			<input hidden name="pId" value=@Model.ProjectId />
+			@if (Model.Status == 0)
+			{
+				<input hidden name="Status" value="0" />
+				<div class="content-right">
+					<button type="submit" class="btn btn-theme">Start</button>
+				</div>
+			}
+			else if (Model.Status == 1)
+			{
+				<input hidden name="Status" value="1" />
+				<div class="content-right">
+					<button type="submit" class="btn btn-theme">Complete</button>
+				</div>
+			}
+		</form>
 	</div>
 </div>
 

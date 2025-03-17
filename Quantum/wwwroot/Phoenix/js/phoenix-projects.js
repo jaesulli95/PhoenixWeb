@@ -10,6 +10,10 @@
         columnDefs: [{
             orderable: false,
             targets: [3] // Disable sorting for columns 0, 2 and 3
+        },
+        {
+            searchable: false,
+            targets: [1,2,3]
         }]
     });
 });

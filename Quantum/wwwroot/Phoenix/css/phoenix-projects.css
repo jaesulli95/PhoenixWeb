@@ -38,12 +38,20 @@
 
 .pt-feature {
     background-color: darkgreen;
+    color: white!important;
 }
 
 .pt-enhancement {
-    background-color: rebeccapurple;
+    background-color: #301934;
+    color:white !important;
 }
 
 .pt-bug {
-    background-color: maroon;
+    background-color: #4A0404;
+    color:white !important;
+}
+
+.content-right {
+    display: flex;
+    justify-content: flex-end;
 }
