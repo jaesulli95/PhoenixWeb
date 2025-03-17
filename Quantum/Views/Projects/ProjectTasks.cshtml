@@ -36,7 +36,6 @@
 		<li class="nav-item me-4 pt-tab"><a href="#StoryTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Story</a></li>
 		<li class="nav-item me-4 pt-tab"><a href="#GameDesignTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Design</a></li>
 		<li class="nav-item me-4 pt-tab"><a href="#GraphicsTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Graphics</a></li>
-		@* <li class="nav-item me-4 pt-tab"><a href="#NotesTab" class="nav-link px-2 py-2" data-bs-toggle="tab">Notes</a></li> *@
 	</ul>
 
 	<!-- Pass in Model Data Here -->
@@ -60,10 +59,5 @@
 		<div class="tab-pane fade" id="GraphicsTab">
 			<partial name="Partials/ProjectTasksTab" model="@Data?.projectTasks?.FindAll(pTask => (pTask.Category == 3) )" />
 		</div>
-
-		<!--Notes-->
-@* 		<div class="tab-pane fade" id="NotesTab" style="visibility:hidden">
-			<partial name="Partials/ProjectNotes" />
-		</div> *@
 	</div>
 </div>
