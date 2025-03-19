@@ -43,9 +43,9 @@
 				<!--text-nowrap-->
 				<thead class="table-dark">
 					<tr>
-						<th class="col-lg-2">Name</th>
+						<th>Name</th>
 						<th>Description</th>
-						<th>Status</th>
+						@* <th>Status</th> *@
 						<th>DateCreated</th>
 						<th></th>
 						<!--Make sure the number of Table Columns match up with the Data Points for each item-->
@@ -56,11 +56,7 @@
 					{
 						<tr class="projectrow">
 							<td>
-								<div class="d-flex align-items-center">
-									<div class="ms-3">
-										<a class="text-body text-opacity-75 text-decoration-none">@p.Name</a>
-									</div>
-								</div>
+								@p?.Name
 							</td>
 							@{string Desc = "";}
 							@if(@p.Description?.Length > 60) {
@@ -69,7 +65,7 @@
 								Desc = p.Description;
 							}
 							<td class="align-middle">@Desc</td>
-							<td class="align-middle">@p.Status</td>
+							@* <td class="align-middle">@p.Status</td> *@
 							<td class="align-middle">@p.CreationTimestamp</td>
 							<td class="align-middle">
 								<div class="col-md-6 col-sm-6 col-xs-6 mb-1 text-truncate">
@@ -83,6 +79,6 @@
 		</div>
 	</div>
 	<div class="col-lg-4">
-		<partial name="Partials/ProjectDataView"/>
+@* 		<partial name="Partials/ProjectDataView"/> *@
 	</div>
 </div>

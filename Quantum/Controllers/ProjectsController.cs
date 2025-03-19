@@ -76,30 +76,20 @@ namespace Quantum.Controllers
             ViewData["ProjectEditData"] = projectEditData;
             return View(projectEditData);
         }
-		public async Task<IActionResult> EditProject([Bind("Id,Description,VCLink,Status")] Project project)
+		
+		[HttpPost]
+		public async Task<IActionResult> EditProject(Project project)
 		{
+            var Client = new HttpClient();
 			try
 			{
-				Project? UpdatedProject = new Project();
-				var Client = new HttpClient();
-				var Resp = await Client.GetAsync($"{this.ApiBaseUrl}/Projects/{project.Id}");
-				string ApiResp = await Resp.Content.ReadAsStringAsync();
-				UpdatedProject = JsonConvert.DeserializeObject<Project>(ApiResp);
-				if (UpdatedProject != null)
-				{
-					UpdatedProject.Description = project.Description;
-					UpdatedProject.VCLink = project.VCLink;
-					UpdatedProject.Status = project.Status;
-
-					HttpResponseMessage UpdResp = await Client.PostAsJsonAsync($"{this.ApiBaseUrl}/Projects/Edit", UpdatedProject);
-				}
-			}
-			catch (Exception ex)
+				HttpResponseMessage UpdResp = await Client.PostAsJsonAsync($"{this.ApiBaseUrl}/Projects/Edit", project);
+			}catch(Exception e)
 			{
 
 			}
-			return RedirectToAction(nameof(this.Index));
-		}
+            return RedirectToAction(nameof(this.Index));
+        }
 		[HttpPost]
 		public async Task<IActionResult?> Create([Bind("Name,Description,VCLink,Category,Status")] Project project)
 		{

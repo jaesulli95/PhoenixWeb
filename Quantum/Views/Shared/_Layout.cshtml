@@ -20,6 +20,11 @@
 		@RenderSection("Styles", required: false)
 	</head>
 	<body class="@ViewData["BodyClass"] theme-indigo">
+
+@* 		<video autoplay muted loop id="bg_video">
+			<source src="~/videos/romantic.mp4" type="video/mp4" />
+		</video> *@
+
 		<div id="app" class="app @ViewData["AppClass"] vh90">
 			@if (ViewData["AppHeaderNone"] == null) {
 				<partial name="_Header" />
