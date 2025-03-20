@@ -1,6 +1,6 @@
 ﻿:root {
     --bs-body-bg-gradient: none;
-    --bs-body-bg-cover: url("../../img/WarriorBackground2.png");
+    --bs-body-bg-cover: url("../../img/healing_1.png");
     object-fit:contain;
 }
 
