@@ -5,6 +5,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Cryptography;
 
 namespace Quantum.Controllers
 {
@@ -20,7 +21,7 @@ namespace Quantum.Controllers
 		}
 		public async Task<IActionResult> Index()
 		{
-			string[] Categories = { "Unreal Engine", "C#", "Python", "AI", "Data Science"};
+			string[] Categories = { "Unreal Engine", "C#", "Python", "AI", "Data Science", "Creative Writing"};
 
 			List<Project>? Projects = new List<Project>();
 			var Client = new HttpClient();
@@ -41,8 +42,27 @@ namespace Quantum.Controllers
 		}
 		public async Task<IActionResult> Edit(int ProjectId)
 		{
-			return View();
+            Project? project = new Project();
+            try
+            {
+                var Client = new HttpClient();
+                var Resp = await Client.GetAsync($"{this.ApiBaseUrl}/Projects/{ProjectId}");
+                string ApiResp = await Resp.Content.ReadAsStringAsync();
+                project = JsonConvert.DeserializeObject<Project>(ApiResp);
+
+                if (project != null)
+                {
+                    ViewData["Project"] = project;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return View(project);
 		}
+
 		public async Task<IActionResult> ProjectTasks(int ProjectId)
 		{
             Project? project = new Project();
@@ -153,7 +173,6 @@ namespace Quantum.Controllers
 				if (Response.IsSuccessStatusCode)
 				{
 					//Do someething when we are OK
-					return RedirectToAction(nameof(this.Index));
 				}
 
 			}
@@ -161,8 +180,8 @@ namespace Quantum.Controllers
 			{
 				Debug.WriteLine(ex.Message.ToString());
 			}
-			return RedirectToAction(nameof(this.Index));
-		}
+            return RedirectToAction(nameof(this.ProjectTasks), new { ProjectId = pTask.ProjectId });
+        }
 
 		[HttpPost]
 		public async Task<IActionResult> UpdateTaskStatus(int TaskId, int pId, int Status)

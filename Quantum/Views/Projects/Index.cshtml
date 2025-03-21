@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<Quantum.Models.Project>
 @{
 	ViewData["Title"] = "Projects";
+
+
+
 }
 @section Styles {
 	<link href="~/lib/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
@@ -37,15 +40,16 @@
 <partial name="Modals/ProjectAddModal"/>
 
 <div class="row">
-	<div class="card col-lg-8">
+	<div class="card col-lg-10">
 		<div class="table-responsive">
 			<table id="dtProjects" class="table table-sm table-hover text-nowrap small mb-4 table-bordered phoenix-entry">
 				<!--text-nowrap-->
 				<thead class="table-dark">
 					<tr>
-						<th>Name</th>
+						<th class="col-lg-1">Name</th>
 						<th>Description</th>
-						@* <th>Status</th> *@
+						<th>Category</th>
+						<th>Status</th>
 						<th>DateCreated</th>
 						<th></th>
 						<!--Make sure the number of Table Columns match up with the Data Points for each item-->
@@ -65,7 +69,14 @@
 								Desc = p.Description;
 							}
 							<td class="align-middle">@Desc</td>
-							@* <td class="align-middle">@p.Status</td> *@
+							<td>@ViewBag.Categories[p.Category]</td>
+							@if(p.Status == 0) {
+								<td class="align-middle">Not Yet Started</td>
+							}else if(p.Status == 1)  {
+								<td class="align-middle">In Progress</td>
+							}else if(p.Status == 2) {
+								<td class="align-middle">Completed/Milestone</td>
+							}
 							<td class="align-middle">@p.CreationTimestamp</td>
 							<td class="align-middle">
 								<div class="col-md-6 col-sm-6 col-xs-6 mb-1 text-truncate">

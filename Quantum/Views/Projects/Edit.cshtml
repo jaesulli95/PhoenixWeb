@@ -1,9 +1,9 @@
-﻿@model ProjectEditData;
+﻿@model Project;
 @{
 	ViewData["Title"] = "Modify Project";
 
-	ProjectEditData? data = (ProjectEditData?)ViewData["ProjectEditData"];
-	int? TaskLength = data?.projectTasks?.Count;
+	// ProjectEditData? data = (ProjectEditData?)ViewData["ProjectEditData"];
+	// int? TaskLength = data?.projectTasks?.Count;
 }
 
 @section Styles {
@@ -13,32 +13,30 @@
 	<script src="~/phoenix/js/phoenix-web.js"></script>
 }
 
-<!--CREATE PROJECT TASK MODAL-->
-@* <partial name="Modals/TaskAddModal" /> *@
 <div class="row gx-4">
-	<div class="col-xl-8">
-		<div class="card mb-4">
+	<div class="col-xl-6">
+		<div class="card mb-4 phoenix-entry">
 			<div class="card-header">
 				PROJECT INFORMATION
 			</div>
 			<div class="card-body">
 				<form asp-controller="Projects" asp-action="EditProject" method="post">
-					<input type="hidden" data-val-required="The ID field is required." id="Id" name="Id" value=@data?.project?.Id />
+					<input type="hidden" data-val-required="The ID field is required." id="Id" name="Id" value=@Model.Id />
 					<div class="mb-3">
 						<label class="form-label">Title <span class="text-danger">*</span></label>
-						<input type="text" class="form-control" value="@data?.project?.Name" id="Name" name="Name">
+						<input type="text" class="form-control" value="@Model.Name" id="Name" name="Name">
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Version Control Link <span class="text-danger">*</span></label>
-						<input type="text" class="form-control" value=@data?.project?.VCLink id="VCLink" name="VCLink">
+						<input type="text" class="form-control" value=@Model.VCLink id="VCLink" name="VCLink">
 					</div>
 					<div class="form-control p-0">
-						<textarea name="Description" class="summernote form-control" rows="12">@data?.project?.Description</textarea>
+						<textarea name="Description" class="summernote form-control" rows="12">@Model.Description</textarea>
 					</div>
 					<br/>
 					<div class="mb-3">
 						<label class="form-label">Status</label>
-						<select class="form-select" name="Status" value="@data?.project?.Status">
+						<select class="form-select" name="Status" value=@Model.Status>
 							<option value="0">Not Yet Started</option>
 							<option value="1">In Progress</option>
 							<option value="2">Completed/Milestone</option>
@@ -49,47 +47,14 @@
 				</form>
 			</div>
 		</div>
-		<br />
-		<div class="card mb-4">
-			<div class="card-header">
-				PROJECT TASKS
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-sm table-hover text-nowrap small mb-4">
-						<!--text-nowrap-->
-						<thead class="table-dark">
-							<tr>
-								<th>NAME</th>
-								<th>TYPE</th>
-								<th>DATE CREATED</th>
-								<th></th>
-								<!--Make sure the number of Table Columns match up with the Data Points for each item-->
-							</tr>
-						</thead>
-						<tbody>
-							@foreach(var pt in data?.projectTasks) {
-								<tr class="project-task-row">
-									<td class="ptname"><abbr title="@pt.Description" class="text-decoration-none">@pt.Name</abbr></td>
-									<td>@pt.Type</td>
-									<td>@pt.DateCreated</td>
-								</tr>
-							}
-						</tbody>
-					</table>
-					<hr />
-					<button data-bs-toggle="modal" data-bs-target="#AddTaskModal" class="btn btn-outline-theme">ADD TASK</button>
-				</div>
-			</div>
-		</div>
-		<br/>
-		<div class="card mb-4">
+		<<!--Delete The Project and Associated Tasks-->
+		<div class="card mb-4 phoenix-entry">
 			<div class="card-header">
 				DELETE PROJECT AND TASKS
 			</div>
 			<div class="card-body">
 				<form asp-controller="Projects" asp-action="DeleteProject">
-					<input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@data?.project?.Id />
+					<input type="hidden" data-val-required="The ID field is required." name="ProjectId" value=@Model.Id />
 					<div class="mb-3">
 						<input type="text" class="form-control" data-val-required="Name is required." id="ProjectName" name="ProjectName" palceholder="Enter Project Name to Delete" required>
 					</div>

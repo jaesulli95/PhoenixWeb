@@ -15,10 +15,15 @@
 
 <!--Header-->
 <div class="d-flex align-items-center mb-md-3 mb-2">
-	<div class="flex-fill">
-		<h1 class="page-header mb-0 theme-color">
-			@Data?.project?.Name
-		</h1>
+	<div class="form-group row mb-3">
+ 		<div class="flex-fill">
+			<h1 class="page-header mb-0 theme-color">
+				@Data?.project?.Name
+				<a asp-controller="Projects" asp-action="Edit" asp-route-ProjectId=@Data?.project?.Id title="Edit @Data?.project?.Name Data">
+					<i style="color: crimson" class="far fa-lg fa-fw me-2 fa-edit"></i>
+				</a>
+			</h1>
+ 		</div>
 	</div>
 	<div class="ms-auto">
 		<a data-bs-toggle="modal" data-bs-target="#ProjectTaskModal" class="btn btn-theme btn-sm py-2 fs-11px w-120px d-flex align-items-center justify-content-center">

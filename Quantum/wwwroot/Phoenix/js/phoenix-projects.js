@@ -9,7 +9,7 @@
         ],
         columnDefs: [{
             orderable: false,
-            targets: [3] // Disable sorting for columns 0, 2 and 3
+            targets: [1,4,5]
         },
         {
             searchable: false,
