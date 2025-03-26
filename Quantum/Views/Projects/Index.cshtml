@@ -51,7 +51,6 @@
 						<th>Category</th>
 						<th>Status</th>
 						<th>DateCreated</th>
-						<th></th>
 						<!--Make sure the number of Table Columns match up with the Data Points for each item-->
 					</tr>
 				</thead>
@@ -60,7 +59,9 @@
 					{
 						<tr class="projectrow">
 							<td>
-								@p?.Name
+								<a asp-controller="Projects" asp-action="ProjectTasks" asp-route-ProjectId=@p.Id>
+									@p?.Name
+								</a>
 							</td>
 							@{string Desc = "";}
 							@if(@p.Description?.Length > 60) {
@@ -78,11 +79,6 @@
 								<td class="align-middle">Completed/Milestone</td>
 							}
 							<td class="align-middle">@p.CreationTimestamp</td>
-							<td class="align-middle">
-								<div class="col-md-6 col-sm-6 col-xs-6 mb-1 text-truncate">
-									<a asp-controller="Projects" asp-action="ProjectTasks" asp-route-ProjectId=@p.Id><i class="far fa-lg fa-fw me-2 fa-edit"></i></a>
-								</div>
-							</td>
 						</tr>
 					}
 				</tbody>

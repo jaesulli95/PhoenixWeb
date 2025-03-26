@@ -9,7 +9,7 @@
         ],
         columnDefs: [{
             orderable: false,
-            targets: [1,4,5]
+            targets: [1,4]
         },
         {
             searchable: false,

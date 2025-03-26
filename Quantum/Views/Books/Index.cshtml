@@ -26,6 +26,7 @@
 	Statuses.Add(1, "In-Progress");
 	Statuses.Add(2, "Completed");
 	Statuses.Add(3, "Did Not Finish");
+	// Statuses.Add(4, "Need to Buy");
 }
 
 <div class="d-flex align-items-center mb-3">
@@ -66,6 +67,7 @@
 								<option value="1">In-Progress</option>
 								<option value="2">Completed</option>
 								<option value="3">Did Not Finish</option>
+								@* <option value="4">Need to Buy</option> *@
 							</select>
 						</div>
 						<hr />
@@ -87,35 +89,23 @@
 					<th>Author</th>
 					<th>Status</th>
 					<th>Date Added</th>
-					<th></th>
+					@* <th></th> *@
 				</tr>
 			</thead>
 			<tbody>
 			@foreach (var b in (List<Book>)ViewBag.Books)
-				{
-					<tr class="bookrow" data-target-bookid=@b.id>
-						<td class="align-middle" data-bookname=@b.Name>
-							<a asp-controller="Books" asp-action="Edit" asp-route-BookId=@b.id class="text-body text-opacity-75 text-decoration-none">
-								@b.Name
-							</a>
-						</td>
-						<td class="align-middle" data-author=@b.Author>@b.Author</td>
-						<td class="align-middle" data-status=@b.Status>@Statuses[b.Status]</td>
-						<td class="align-middle" data-modified=@b.DateModified>@b.DateModified</td>
-						<td>
-							@if(b.Status == 0){
-								<abbr title="In-Progress"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="1"><i class="far fa-lg fa-fw me-2 fa-hourglass"></i></a></abbr>
-								<abbr title="Complete"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="2"><i class="fas fa-lg fa-fw me-2 fa-book"></i></a></abbr>
-								<abbr title="DNF"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="3"><i class="fas fa-lg fa-fw me-2 fa-ban"></i></a></abbr>
-							}
-
-							@if(b.Status == 1) {
-								<abbr title="Complete"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="2"><i class="fas fa-lg fa-fw me-2 fa-book"></i></a></abbr>
-								<abbr title="DNF"><a asp-controller="Books" asp-action="EditStatus" asp-route-BookId=@b.id asp-route-status="3"><i class="fas fa-lg fa-fw me-2 fa-ban"></i></a></abbr>
-							}
-						</td>
-					</tr>
-				}
+			{
+				<tr class="bookrow" data-target-bookid=@b.id>
+					<td class="align-middle" data-bookname=@b.Name>
+						<a asp-controller="Books" asp-action="Edit" asp-route-BookId=@b.id class="text-body text-opacity-75 text-decoration-none">
+							@b.Name
+						</a>
+					</td>
+					<td class="align-middle" data-author=@b.Author>@b.Author</td>
+					<td class="align-middle" data-status=@b.Status>@Statuses[b.Status]</td>
+					<td class="align-middle" data-modified=@b.DateModified>@b.DateModified</td>
+				</tr>
+			}
 			</tbody>
 		</table>
 	</div>

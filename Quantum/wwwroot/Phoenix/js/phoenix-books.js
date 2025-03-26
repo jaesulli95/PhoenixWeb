@@ -9,11 +9,11 @@
         ],
         columnDefs: [{
             orderable: false,
-            targets: [3,4]
+            targets: [3]
         },
         {
             searchable: false,
-            targets: [2, 3, 4]
+            targets: [2, 3]
         }]
 
     });
