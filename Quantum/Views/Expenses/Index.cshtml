@@ -1,0 +1,25 @@
+﻿@{
+	ViewData["Title"] = "Expenses";
+}
+@section Styles {
+
+}
+@section Scripts {
+
+}
+
+<div class="d-flex align-items-center mb-3">
+	<div>
+		<h1 class="page-header mb-0">Expenses</h1>
+	</div>
+
+	<div class="ms-auto">
+		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
+		   data-bs-toggle="modal" data-bs-target="#ExpenseModal">
+			<iconify-icon icon="material-symbols-light:add" class="fs-22px me-1 ms-n3 my-n3"></iconify-icon>
+			ADD EXPENSE
+		</a>
+	</div>
+</div>
+
+<partial name="Modals/AddExpenseModal"/>

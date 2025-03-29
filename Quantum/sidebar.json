@@ -49,23 +49,16 @@
 			"display": true
 		},
 		{
-			"text": "EXPENSES",
+			"text": "MONEY",
 			"is_header": true,
-			"display": false
+			"display": true
 		},
 		{
-			"controller": "",
-			"action": "",
+			"controller": "Expenses",
+			"action": "Index",
 			"icon": "bi-cash-coin",
-			"text": "Bills",
-			"display": false
-		},
-		{
-			"controller": "",
-			"action": "",
-			"icon": "bi-card-list",
 			"text": "Expenses",
-			"display": false
+			"display": true
 		}
 	]
 }
