@@ -1,0 +1,3 @@
+﻿body .dt-bootstrap5 .dataTable.dtr-inline tr td.dtr-control::before {
+    content: none !important;
+}

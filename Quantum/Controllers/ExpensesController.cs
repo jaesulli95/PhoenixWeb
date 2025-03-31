@@ -7,7 +7,7 @@ namespace PhoenixWeb.Controllers
 {
     public class ExpensesController : Controller
     {
-        string[] ExpenseCategories = { "Rent", "Food", "Phone", "Car Insurance", "Taekwondo","Utilities", "Misc" };
+        string[] ExpenseCategories = { "Rent", "Food", "Phone", "Car Insurance", "Taekwondo","Utilities", "Misc", "Gas" };
         private IConfiguration configuration;
         private string? ApiBaseUrl;
 

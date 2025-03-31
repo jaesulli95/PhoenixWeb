@@ -4,10 +4,22 @@
 	List<Expense> expenses = (List<Expense>)ViewBag.Expenses;
 }
 @section Styles {
-
+	<link href="~/lib/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+	<link href="~/lib/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+	<link href="~/lib/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" />
+	<link href="~/Phoenix/css/phoenix-expenses.css" rel="stylesheet" />
 }
 @section Scripts {
-
+	<script src="~/lib/datatables.net/js/dataTables.min.js"></script>
+	<script src="~/lib/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="~/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="~/lib/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+	<script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="~/lib/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+	<script src="~/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="~/lib/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="~/phoenix/js/phoenix-web.js"></script>
+	<script src="~/phoenix/js/phoenix-expenses.js"></script>
 }
 
 <partial name="Modals/AddExpenseModal"/>
@@ -68,12 +80,14 @@
 							@ExpenseName
 						</td>
 						<td style="text-align:right">$@expenses.FindAll(e => (e.Category == ExpenseName)).Sum(e => e.Cost)</td>
+						@*Add Counts*@
 					</tr>
 				}
 			</tbody>
 			<tfoot>
+				<tr></tr>
 				<tr>
-					<td>Total</td>
+					<td>Totals</td>
 					<td style="text-align:right">$@expenses.Sum(total => total.Cost)</td>
 				</tr>
 			</tfoot>
