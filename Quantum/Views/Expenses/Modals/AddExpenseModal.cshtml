@@ -1,5 +1,7 @@
-﻿<div class="modal fade" id="ExpenseModal">
-	<div class="modal-dialog modal-lg">
+﻿@model Quantum.Models.Expense;
+
+<div class="modal fade" id="ExpenseModal">
+	<div class="modal-dialog modal-md">
 		<!--modal-lg-->
 		<div class="modal-content">
 			<div class="modal-header">
@@ -7,7 +9,35 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<div class="modal-body">
-				<form asp-controller="" asp-action="" method="post">
+				<form asp-controller="Expenses" asp-action="AddExpense" method="post">
+					<div class="form-group row mb-3">
+						<label class="form-label col-sm-4 col-form-label">Category</label>
+						<div class="col-sm-6">
+							<select class="form-select"asp-for=Category>
+								@foreach(string ec in ViewBag.ExpenseCategories) {
+									<option value=@ec>@ec</option>
+								}
+							</select>
+						</div>
+					</div>
+					<div class="form-group row mb-3">
+						<label class="form-label col-sm-4 col-form-label">Cost</label>
+						<div class="col-sm-6">
+							<input type="number" step="any" class="form-control" asp-for=Cost value=0 placeholder="" />
+						</div>
+					</div>
+
+					<div class="form-group row mb-3">
+						<label class="col-sm-4 col-form-label">Notes</label>
+					</div>
+					<div class="form-group row mb-3">
+						<div class="col-sm-12">
+							<textarea asp-for=Notes class="form-control" rows="5"style="resize:none"></textarea>
+						</div>
+					</div>
+
+					<hr />
+					<button type="submit" class="btn btn-outline-theme">Add Expense</button>
 				</form>
 			</div>
 		</div>

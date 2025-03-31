@@ -1,5 +1,7 @@
-﻿@{
+﻿
+@{
 	ViewData["Title"] = "Expenses";
+	List<Expense> expenses = (List<Expense>)ViewBag.Expenses;
 }
 @section Styles {
 
@@ -8,11 +10,12 @@
 
 }
 
+<partial name="Modals/AddExpenseModal"/>
+
 <div class="d-flex align-items-center mb-3">
 	<div>
 		<h1 class="page-header mb-0">Expenses</h1>
 	</div>
-
 	<div class="ms-auto">
 		<a href="#" class="btn btn-theme btn-sm w-130px py-2 fs-11px d-flex align-items-center justify-content-center"
 		   data-bs-toggle="modal" data-bs-target="#ExpenseModal">
@@ -22,4 +25,58 @@
 	</div>
 </div>
 
-<partial name="Modals/AddExpenseModal"/>
+<div class="row">
+	<div class="card col-lg-4">
+		<div class="table-responsive">
+			<table id="dtExpenses" class="table table-lg table-hover text-nowrap small mb-4 table-bordered phoenix-entry">
+				<!--text-nowrap-->
+				<thead class="table-dark">
+					<tr>
+						<th>Category</th>
+						<th>Cost</th>
+						<th>Date</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var e in (List<Expense>)ViewBag.Expenses) {
+						<tr class="">
+							<td>@e.Category</td>
+							<td>@e.Cost</td>
+							<td>@e.Date</td>
+							<td>@e.Notes</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="card col-lg-2">
+		<table class="table table-lg table-hover text-nowrap small mb-4 table-bordered phoenix-entry">
+			<thead class="table-dark">
+				<tr>
+					<th colspan="2">Expense Totals</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				@* Compute Totals Here *@
+
+				@foreach(string ExpenseName in (string[])ViewBag.ExpenseCategories) {
+					<tr>
+						<td>
+							@ExpenseName
+						</td>
+						<td style="text-align:right">$@expenses.FindAll(e => (e.Category == ExpenseName)).Sum(e => e.Cost)</td>
+					</tr>
+				}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Total</td>
+					<td style="text-align:right">$@expenses.Sum(total => total.Cost)</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>
