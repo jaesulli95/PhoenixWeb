@@ -47,7 +47,11 @@ app.MapFallback(context => {
 	return Task.CompletedTask;
 });
 
+app.UseExceptionHandler("/Error");
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
 app.MapRazorPages();
+
 if (app.Environment.IsDevelopment())
 {
     app.Run();
