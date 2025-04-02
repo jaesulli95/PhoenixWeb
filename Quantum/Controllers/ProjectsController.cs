@@ -191,5 +191,12 @@ namespace Quantum.Controllers
             return RedirectToAction(nameof(this.ProjectTasks), new { ProjectId = pId });
 
         }
+
+		public async Task<IActionResult> DeleteTask(int TaskId, int projectId)
+		{
+			var Client = new HttpClient();
+			var Resp = await Client.PostAsync($"{this.ApiBaseUrl}/Projects/Tasks/Delete/{TaskId}", null);
+			return RedirectToAction(nameof(this.ProjectTasks), new { ProjectId = projectId });
+		}
 	}
 }
