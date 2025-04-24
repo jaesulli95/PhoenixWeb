@@ -36,11 +36,11 @@
 			"text": "Journal Tracker",
 			"display": true
 		},
-		{
+		/*{
 			"text": "BOOKS",
 			"is_header": true,
 			"display": true
-		},
+		},*/
 		{
 			"controller": "Books",
 			"action": "Index",
@@ -48,17 +48,29 @@
 			"text": "Library",
 			"display": true
 		},
-		{
+		/*{
 			"text": "MONEY",
 			"is_header": true,
 			"display": true
-		},
+		},*/
 		{
 			"controller": "Expenses",
 			"action": "Index",
 			"icon": "bi-cash-coin",
 			"text": "Expenses",
 			"display": true
-		}
+		},
+		/*{
+			"text": "FEEDS",
+			"is_header": true,
+			"display": true
+		},
+		{
+			"controller": "",
+			"action": "",
+			"icon": "bi-news",
+			"text": "News",
+			"display": true
+		}*/
 	]
 }
