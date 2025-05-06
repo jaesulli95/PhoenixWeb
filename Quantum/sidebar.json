@@ -30,17 +30,10 @@
 			"display": true
 		},
 		{
-			"controller": "Journal",
-			"action": "Index",
-			"icon": "bi-journal",
-			"text": "Journal Tracker",
-			"display": true
-		},
-		/*{
 			"text": "BOOKS",
 			"is_header": true,
 			"display": true
-		},*/
+		},
 		{
 			"controller": "Books",
 			"action": "Index",
@@ -48,11 +41,11 @@
 			"text": "Library",
 			"display": true
 		},
-		/*{
+		{
 			"text": "MONEY",
 			"is_header": true,
 			"display": true
-		},*/
+		},
 		{
 			"controller": "Expenses",
 			"action": "Index",
@@ -60,17 +53,24 @@
 			"text": "Expenses",
 			"display": true
 		},
-		/*{
-			"text": "FEEDS",
+		{
+			"text": "ART",
 			"is_header": true,
 			"display": true
 		},
 		{
-			"controller": "",
-			"action": "",
-			"icon": "bi-news",
-			"text": "News",
+			"controller": "Art",
+			"action": "Gallery",
+			"icon": "",
+			"text": "Drawing",
 			"display": true
-		}*/
+		},
+		{
+			"controller": "Art",
+			"action": "ThreeD",
+			"icon": "",
+			"text": "3D Models",
+			"display": true
+		}
 	]
 }
