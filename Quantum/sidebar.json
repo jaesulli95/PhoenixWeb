@@ -61,12 +61,12 @@
 		{
 			"controller": "Art",
 			"action": "Gallery",
-			"icon": "",
+			"icon": "bi-cash-coin",
 			"text": "Drawing",
 			"display": true
 		},
 		{
-			"controller": "Art",
+			"controller": "",
 			"action": "ThreeD",
 			"icon": "",
 			"text": "3D Models",
