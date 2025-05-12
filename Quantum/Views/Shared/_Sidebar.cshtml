@@ -29,26 +29,26 @@
 						<div class="menu-item @(menuController == @menu["controller"] ? "active" : "") @(menuChildren.Length > 0 ? "has-sub" : "")">
 							@if (menu["action"] != null && menu["controller"] != null) {
 								<a asp-controller="@menu["controller"]" asp-action="@menu["action"]" asp-area="@menu["area"]" class="menu-link">
-									<span class="menu-icon">
+									@* <span class="menu-icon">
 										@if (menu["icon"] != null) {
 											<i class="bi @menu["icon"]"></i>
 										}
 										@if (menu["label"] != null) {
 											<span class="menu-icon-label">@menu["label"]</span>
 										}
-									</span>
+									</span> *@
 									<span class="menu-text">@menu["text"]</span>
 								</a>
 							} else {
 								<a href="#" class="menu-link">
-									<span class="menu-icon">
+									@*<span class="menu-icon">
 										@if (menu["icon"] != null) {
 											<iconify-icon icon="@menu["icon"]"></iconify-icon>
 										}
 										@if (menu["label"] != null) {
 											<span class="menu-icon-label">@menu["label"]</span>
 										}
-									</span>
+									</span>*@
 									<span class="menu-text">@menu["text"]</span>
 									@if (menuChildren.Length > 0) { 
 										<span class="menu-caret"><b class="caret"></b></span>

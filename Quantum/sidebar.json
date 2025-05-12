@@ -1,75 +1,43 @@
 ﻿{
 	"sidebarMenu": [
 		{
-			"text": "PHOENIX-WEB",
+			"text": "TODO::",
 			"is_header": true,
 			"display": true
-		},
-		{
-			"is_divider": true
-		},
-		{
-			"controller": "Home",
-			"action": "Index",
-			"icon": "bi-house",
-			"text": "Home",
-			"display": false
 		},
 		{
 			"controller": "Projects",
 			"action": "Index",
-			"icon": "bi-folder2-open",
 			"text": "Projects",
-			"display": true
-		},
-		{
-			"controller": "Items",
-			"action": "Index",
-			"icon": "bi-list",
-			"text": "Groceries",
-			"display": true
-		},
-		{
-			"text": "BOOKS",
-			"is_header": true,
 			"display": true
 		},
 		{
 			"controller": "Books",
 			"action": "Index",
-			"icon": "bi-book",
 			"text": "Library",
 			"display": true
 		},
 		{
-			"text": "MONEY",
+			"text": "TODO::",
 			"is_header": true,
 			"display": true
 		},
 		{
-			"controller": "Expenses",
-			"action": "Index",
-			"icon": "bi-cash-coin",
-			"text": "Expenses",
+			"controller": "",
+			"action": "",
+			"text": "Drawing-Art",
 			"display": true
 		},
 		{
-			"text": "ART",
-			"is_header": true,
+			"controller": "",
+			"action": "",
+			"text": "3D Videos",
 			"display": true
 		},
 		{
-			"controller": "Art",
-			"action": "Gallery",
-			"icon": "",
-			"text": "Drawing",
-			"display": true
-		},
-		{
-			"controller": "Art",
-			"action": "ThreeD",
-			"icon": "",
-			"text": "3D Models",
+			"controller": "",
+			"action": "",
+			"text": "Creative Writing",
 			"display": true
 		}
 	]
